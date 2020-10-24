@@ -1,0 +1,27 @@
+class people:
+    def __init__(self, firstName, lastName):
+        self.firstName = firstName
+        self.lastName = lastName
+        self.fullName = '{} {}'.format(self.firstName, self.lastName)
+        self.email = firstName + lastName + "@gmail.com"
+
+
+class Customers(people):
+    def __init__(self, firstName, lastName):
+        super().__init__(firstName, lastName)
+        self.money = 0  # current balance of this customer
+        self.warning = 0
+        self.moneySpend = 0
+        print("Welcome {} and your email is {}".format(self.fullName, self.email))
+
+    def deposit(self, deposit):
+        print("-----------------------------------------------------------")
+        print("Before deposit, {} has ${}".format(self.fullName, self.money))
+        print("After depositing {}".format(deposit))
+        self.money += deposit
+        print("After deposit, {} has ${} ".format(self.fullName, self.money))
+
+    def warn(self):
+        print("{} has {}(s) before".format(self.fullName, self.warning))
+        self.warning += 1
+        print("{} has {}(s) now".format(self.fullName, self.warning))
