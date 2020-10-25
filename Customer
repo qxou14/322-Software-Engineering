@@ -5,13 +5,21 @@ class people:
         self.fullName = '{} {}'.format(self.firstName, self.lastName)
         self.email = firstName + lastName + "@gmail.com"
 
+class visitor(people):
+    def __init__(self,firstName,lastName):
+        super().__init__(firstName,lastName)
+
 
 class Customers(people):
+    total = 0  #total number of customers
     def __init__(self, firstName, lastName):
         super().__init__(firstName, lastName)
         self.money = 0  # current balance of this customer
         self.warning = 0
         self.moneySpend = 0
+        self.order = 0
+        self.Is_VIP = False
+        Customers.total +=1
         print("Welcome {} and your email is {}".format(self.fullName, self.email))
 
     def deposit(self, deposit):
@@ -22,6 +30,62 @@ class Customers(people):
         print("After deposit, {} has ${} ".format(self.fullName, self.money))
 
     def warn(self):
-        print("{} has {}(s) before".format(self.fullName, self.warning))
+        print("{} has {} warning(s) before".format(self.fullName, self.warning))
         self.warning += 1
-        print("{} has {}(s) now".format(self.fullName, self.warning))
+        print("{} has {} warning(s) now".format(self.fullName, self.warning))
+        if self.Is_VIP == True and self.warning >= 2:
+            self.demote()
+            self.warning = 0
+        if self.warning >= 3:
+            print("Sorry {} you have met the max of warnings".format(self.fullName))
+            self.demote()  #de_register
+            self.warning = 0
+
+
+    def demote(self):
+        if (self.Is_VIP == True):
+            print("You are no longer a VIP user")
+        else:
+            print("de-register")
+    #de_register not yet done
+    #if vip -> normal user
+
+    def VIP(self):
+        print("Congrats {} is a VIP NOW!".format(self.fullName))
+
+    def buy(self,cost):
+        if self.money == 0 or self.money < cost:
+            print("Your balance is {}, please deposit some money before you can buy! (More than the item cost)".format(self.money))
+            willing = input("Do you want to deposit now? \n")
+            if willing[0].lower() == "y":
+                dep = int(input("How much do you want to deposit? (Please enter a valid number) "))
+                self.deposit(dep)
+                if dep == 0 or dep < cost:
+                    print("You still don't have enough balance, the transaction is over ! ")
+                    return
+
+            else:
+                print("You don't want to deposit so see ya !")
+                return
+
+
+        self.moneySpend += cost
+        print("spends total of ${} ".format(self.moneySpend))
+        self.money -= cost
+        print("Current balance ${}".format(self.money))
+
+        if (self.moneySpend >= 500 or self.order >= 50) and self.Is_VIP == False:
+
+            answer = input("You have a chance to become VIP, do you want to accept this offer?\n(YES/NO)")
+            if answer[0].lower() == "y":
+                print("You({}) accepted our VIP offer !".format(self.fullName))
+                self.promote()
+                self.VIP()
+            else:
+                print("You({}) didn't accepted our VIP offer !".format(self.fullName))
+                print("Thank you for letting us know ! ")
+
+
+    def promote(self):
+        print("You are VIP now !")
+        self.Is_VIP = True
