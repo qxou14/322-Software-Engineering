@@ -1,3 +1,8 @@
+<?php  
+    
+    include('header.html')
+    
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -5,29 +10,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel = "stylesheet" type = "text/css" href ="style.css">
 </head>
 <body>
 
-
-<center>
-
-<img src = "example.jpg" , width = 600, height = 600 />
-    
-    
+<div class ="loginPlace">
     <form action = "index.php" method = "get">
-        Username:<input type = "text" Username = "name">
+        <label>Username:</label>
+        <input type = "text" Username = "name">
         <br>
-        Password:<input type = "password" , Password = "password">
+        <label>Password:</label>
+        <input type = "password" , Password = "password">
         <br>
-        <a href="reg.php"> <b><i>new user?</i></b> </a>
         <input type = "submit">
+        <a href="reg.php"> <b>New User<b> </a>
+        
   
     </form>
-
-</center>
-
-
-
+</div>
 
 </body>
 </html>
+
