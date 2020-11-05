@@ -1,31 +1,38 @@
 <?php  
     include_once 'database.php'; 
+    include('header.html')
+    
 ?>
+
+<link rel = "stylesheet" type = "text/css" href ="style.css">
+
 <br>
 <hr>
 
+<div class = "login_info">
+    <form action = "reg.php" method = "POST">
+        Username:<input type= "text" name="username" placeholder = "at least 4 characters">
+        <br>
+        Fullname:<input type= "text" name="fullname" placeholder = "Enter your Full name">
+        <br>
+        Password:<input type= "password"  name="password" placeholder = "At least 8 letters/numbers">
+        <br>
+        Comfirmed Password:<input type= "password"  name="cpassword" placeholder = " same as password">
+        <br>
+        Email:<input type= "text" name="email" placeholder="xxx@gmail.com">
+        <br>
+        Address: <input type="text" name="address" placeholder ="Wrong = delayed order">
+        <br>
+        Phone: <input type= "text" name="phone" placeholder = "ex:123456789">
+        <br>
+        <input type= "submit">
+        <br>
+        
+    </form>
 
-<form action = "reg.php" method = "POST">
-    Username:<input type= "text" name="username" placeholder = "at least 4 characters">
-    <br>
-    Fullname:<input type= "text" name="fullname" placeholder = "Enter your Full name">
-    <br>
-    Password:<input type= "password"  name="password" placeholder = "At least 8 letters/numbers">
-    <br>
-    Comfirmed Password:<input type= "password"  name="cpassword" placeholder = " same as password">
-    <br>
-    Email:<input type= "text" name="email" placeholder="xxx@gmail.com">
-    <br>
-    Address: <input type="text" name="address" placeholder ="Wrong = delayed order">
-    <br>
-    Phone: <input type= "text" name="phone" placeholder = "ex:123456789">
-    <br>
-    <input type= "submit">
-    <br>
-    
-</form>
+<div>
 
-
+<a href="index.php"> <b><i>Go back</i></b> </a>
 <?php
 
     $Username = isset($_POST["username"]) ?$_POST["username"] : "";
@@ -81,10 +88,4 @@ else if (!$is_phone){
 
 
 ?>
-
-
-
-
-
-
 
