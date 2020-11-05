@@ -1,0 +1,33 @@
+.look{
+    background-color: gray;
+    font-size:25px;
+    font-family:Arial, Helvetica, sans-serif;
+}
+.introduction{
+    background-color: coral;
+    font-size:50px;
+    padding-left: 10%;
+
+}
+a{
+    text-decoration: none;
+    color:black;
+    margin-left: 10%;
+
+}
+
+
+.loginPlace{
+    
+    margin-left: 45%;
+    margin-top: 300px;
+    
+}
+
+form{
+    padding:20px;
+}
+
+form label{
+    display: block;
+}
