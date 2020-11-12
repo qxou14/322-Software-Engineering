@@ -8,6 +8,7 @@
 
 <br>
 <hr>
+<a href="index.php"> <b><i>Go back</i></b> </a>
 
 <div class = "login_info">
     <form action = "reg.php" method = "POST">
@@ -32,7 +33,7 @@
 
 <div>
 
-<a href="index.php"> <b><i>Go back</i></b> </a>
+
 <?php
 
     $Username = isset($_POST["username"]) ?$_POST["username"] : "";
@@ -56,8 +57,12 @@
 if($Password == $check_P && $lenUser && $lenName && $lenPass && $lenEmail && $lenAddr && $is_phone)
 {
     echo "Congrats ! You have been registered!";
-    $sqlStatement = "INSERT INTO info (username,FullName,pwd,email,addr,phoneNumber) VALUES ('$Username','$Fullname','$Password','$Email','$Addr','$Phone');" ;
+    $sqlStatement = "INSERT INTO info (username,FullName,pwd,email,addr,phoneNumber,saving,warning) VALUES ('$Username','$Fullname','$Password','$Email','$Addr','$Phone',0,0);" ;
     mysqli_query($conn,$sqlStatement);
+}
+else if($Username == "")
+{
+    echo "Welcome!";
 }
 else if ($Password !=$check_P ){
     echo "Please re-enter your password";
