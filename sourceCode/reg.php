@@ -8,7 +8,7 @@
 
 <br>
 <hr>
-<a href="index.php"> <b><i>Go back</i></b> </a>
+
 
 <div class = "login_info">
     <form action = "reg.php" method = "POST">
@@ -20,13 +20,13 @@
         <br>
         Comfirmed Password:<input type= "password"  name="cpassword" placeholder = " same as password">
         <br>
-        Email:<input type= "text" name="email" placeholder="xxx@gmail.com">
+        Email:<input type= "email" name="email" placeholder="xxx@gmail.com">
         <br>
         Address: <input type="text" name="address" placeholder ="Wrong = delayed order">
         <br>
         Phone: <input type= "text" name="phone" placeholder = "ex:123456789">
         <br>
-        <input type= "submit">
+        <button type = "submit" name = "submit">Sign up </button>
         <br>
         
     </form>
