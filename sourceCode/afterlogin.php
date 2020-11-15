@@ -1,7 +1,8 @@
 <?php 
     include "sectionStart.php";
+    include "database.php";
 
-    echo $_SESSION['username'];
+    
 
 ?>
 
@@ -15,4 +16,17 @@
     <span><a href = "logout.php"> Log out</a></span>
 </div>
 
-<>
+
+<h3><i>Username: <?php echo $_SESSION['username']; ?> <i></h3>
+
+<?php 
+    $username = $_SESSION['username'];
+    $sql = "SELECT saving FROM info  WHERE username = '$username' ";
+
+    $result = $conn->query($sql);
+    $row = $result->fetch_assoc();
+    //$row['saving']
+    echo "<h3><i> Money left: {$row['saving']} </i></h3>";
+
+
+?>
