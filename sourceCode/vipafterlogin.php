@@ -14,7 +14,7 @@
 </div>
 
 
-<h3><i>Welcome User: <?php echo $_SESSION['username']; ?> <i></h3>
+<h3><i>Welcome VIP User: <?php echo $_SESSION['username']; ?> <i></h3>
 
 <?php 
     $username = $_SESSION['username'];
@@ -30,4 +30,3 @@
     echo "<h3><i> Warnings: {$row['warning']} </i></h3>";
 
 ?>
-

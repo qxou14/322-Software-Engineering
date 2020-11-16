@@ -27,7 +27,7 @@
         <input type = "password" , name = "password">
         <br>
         <input type = "submit">
-        <a href="reg.php"> <b>New User<b> </a>
+        <a href="adminLogin.php"> <b>Admin?<b> </a>
     </form>
 </div>
 <?php
@@ -36,11 +36,28 @@
     $exsited = accountExist($conn,$Username,$Password); //whether there is account or no
    
 
-    
-    if($exsited === true)
+    if($Username == "" && $Password == "")
+    {
+        echo "";
+    }
+    else if($exsited === true)
     {
         $_SESSION['username'] = $Username;
-       header("location: ../SESERVER/afterlogin.php");
+        $sql = "SELECT level FROM info  WHERE username = '$Username' ";
+        $result = $conn->query($sql);
+        $row = $result->fetch_assoc();
+        $userType = $row['level'];
+
+        if($userType == 0)
+        {
+            header("location: ../SESERVER/afterlogin.php");
+        }
+
+        else{
+            header("location: ../SESERVER/vipafterlogin.php");
+
+        }
+       
         
     }
     else

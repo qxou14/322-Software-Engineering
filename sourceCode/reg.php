@@ -57,7 +57,7 @@
 if($Password == $check_P && $lenUser && $lenName && $lenPass && $lenEmail && $lenAddr && $is_phone)
 {
     echo "Congrats ! You have been registered!";
-    $sqlStatement = "INSERT INTO info (username,FullName,pwd,email,addr,phoneNumber,saving,warning) VALUES ('$Username','$Fullname','$Password','$Email','$Addr','$Phone',0,0);" ;
+    $sqlStatement = "INSERT INTO info (username,FullName,pwd,email,addr,phoneNumber,saving,warning,level) VALUES ('$Username','$Fullname','$Password','$Email','$Addr','$Phone',0,0,0);" ;
     mysqli_query($conn,$sqlStatement);
 }
 else if($Username == "")
