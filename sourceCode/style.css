@@ -12,7 +12,20 @@
 
 .logos{
 
-    color: blue;
+    text-align:center;
+    list-style: none;
+    font-size: 30px;
+    padding-top : 100px;
+    padding-right: 10%;
+    padding-left: 1em;
+    
+    
+}
+
+.logos li{
+
+    margin: 30px;
+
 }
 
     
@@ -21,6 +34,7 @@ a{
     text-decoration: none;
     color:black;
     margin-left: 10%;
+    
 }
 
 

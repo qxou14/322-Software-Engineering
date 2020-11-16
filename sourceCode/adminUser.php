@@ -18,6 +18,8 @@
         <li><a href = ""> Demote</a></li>
         <li><a href = ""> Fire </a></li>
         <li><a href = ""> Compliment/complain </a></li>
+        <li><a href = "deregister.php"> de-register </a></li>
+        <li><a href = ""> Compliment/complain </a></li>
         <li><a href = "logout.php"> log out </a></li>
     </u1>
 </div>

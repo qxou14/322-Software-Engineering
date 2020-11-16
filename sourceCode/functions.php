@@ -27,6 +27,19 @@
         
     }
 
+    function deleteS($conn,$username)
+    {
+        $sql = "DELETE FROM info WHERE username = '$username'";
+        mysqli_query($conn,$sql);
+    }
+
+    function vipgone($conn, $username)
+    {
+        $sql = "UPDATE info SET level =0, warning = 0 WHERE username = '$username' and warning >=2";
+        mysqli_query($conn,$sql);
+
+    }
+
 
 
 
