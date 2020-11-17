@@ -27,7 +27,22 @@
 
             $sql = "UPDATE info SET saving = saving+'$a' WHERE username = '$username'";
             mysqli_query($conn,$sql);
-            header("location: ../SESERVER/afterlogin.php");
+
+            $sql1 = "SELECT level FROM info WHERE username ='$username'";
+            $result = $conn->query($sql1);
+            $row = $result->fetch_assoc();
+            $userType = $row['level'];
+
+            if($userType == 0)
+            {
+                header("location: ../SESERVER/afterlogin.php");
+            }
+            else
+            {
+                header("location: ../SESERVER/vipafterlogin.php");
+            }
+
+            
         }
         else
         {
