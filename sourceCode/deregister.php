@@ -112,3 +112,57 @@
                 <br>             
     </form>
 </div>
+
+
+
+<div>
+    <table>
+            <caption>People who wants to quit</caption>
+                <tr=> 
+                    <th>username</th>  
+                    <th>FullName</th>
+                    <th>saving</th>
+                    <th>Warning</th>
+                
+                <tr> 
+                <?php
+
+                    if(isset($_POST['username21']))
+                    {
+                        deleteS($conn,$_POST['username21']);
+
+                    }
+                
+                    $result = $conn -> query("SELECT username,FullName,saving,warning FROM info where expire = 1");
+                    $i = 0;
+                    if ($result -> num_rows >0)
+                    {
+                        {
+                            while($row = $result -> fetch_assoc())
+                            {
+                                echo "<tr valign='middle'>";
+                                echo "<td>".$row['username']."</td>";
+                                echo "<td>".$row['FullName']."</td>";
+                                echo "<td>".$row['saving']."</td>";
+                                echo "<td>".$row['warning']."</td>";
+                                echo "</tr>";         
+                            }
+                        }
+                    
+                        $i++;
+                    }
+
+                   
+
+                    
+                ?>
+    </table>
+
+
+    <form action = "deregister.php" method = "POST">
+                Remove:<input type= "text" name="username21">
+                <br>
+                <button type = "submit" name = "submit">Remove!</button>
+                <br>             
+    </form>
+</div>

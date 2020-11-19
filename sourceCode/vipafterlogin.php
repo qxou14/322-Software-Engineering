@@ -7,9 +7,10 @@
 
 <div class = "introduction"> The Online Restaurant </div>
 <div class = "look">
-    <span><a href=""> Order </a></span>
+    <span><a href="vipafterlogin.php"> Order </a></span>
     <span><a href = "">Complain</a></span>
     <span><a href = "deposit.php"> Deposit</a></span>
+    <span><a href = "cancelAccount.php"> Cancellation</a></span>
     <span><a href = "logout.php"> Log out</a></span>
 </div>
 

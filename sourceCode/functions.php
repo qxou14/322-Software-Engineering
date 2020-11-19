@@ -44,6 +44,12 @@
     {
         $sql = "UPDATE info SET level =1 WHERE username = '$username'";
         mysqli_query($conn,$sql);
+    }
+
+    function expire($conn,$username)
+    {
+        $sql = "UPDATE info SET expire = 1 WHERE username = '$username'";
+        mysqli_query($conn,$sql);
 
     }
 

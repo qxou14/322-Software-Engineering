@@ -43,26 +43,36 @@
     else if($exsited === true)
     {
         $_SESSION['username'] = $Username;
-        $sql = "SELECT level FROM info  WHERE username = '$Username' ";
+        $sql = "SELECT level,expire FROM info  WHERE username = '$Username' ";
         $result = $conn->query($sql);
         $row = $result->fetch_assoc();
         $userType = $row['level'];
+        $expire = $row['expire'];
 
-        if($userType == 0)
+        if($expire == 0)
         {
+            if($userType == 0)
+            {
             header("location: ../SESERVER/afterlogin.php");
-        }
+            }
 
-        else{
+            else{
             header("location: ../SESERVER/vipafterlogin.php");
 
+            }
+
         }
+        else
+        {
+            echo "Your account is no longer avaliable";
+        }
+        
        
         
     }
     else
     {
-        echo "you enter the wrong information!";
+        echo "The information doesn't match!";
     }
    
 ?>
