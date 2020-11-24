@@ -1,0 +1,17 @@
+create table info(
+
+	username varchar(20) Primary Key,
+	FullName varchar(20),
+	pwd varchar(50),
+	email varchar(50),
+	addr varchar(50),
+	phoneNumber varchar(20),
+	saving float,
+	warning int,
+	level int DEFAULT 0,
+	Spend float DEFAULT 0,
+	TotalOrder int DEFAULT 0,
+	expire int DEFAULT 0
+
+
+);
