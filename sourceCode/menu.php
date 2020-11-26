@@ -1,3 +1,22 @@
+<?php
+  
+   $servername = "localhost";
+   $username = "root";
+   $password = "";
+   $dbname = "populardishes";
+   
+   // Create connection
+   $conn = mysqli_connect($servername,$username,$password,$dbname);
+   
+   // Check connection
+   if ($conn->connect_error) {
+       die("Connection failed: " . $conn->connect_error);
+     }
+     
+     
+     
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,48 +39,55 @@
 <body>
 <section class="menu"><h2 class="menu_title">Our Menu</h2>
                     <div class="menu_section Chef_1_Dishes"><h3>Popular Dishes</h3>
+                    <?php
+                        $query = "SELECT * FROM popdish ORDER BY id ASC";
+                        $result = mysqli_query($conn,$query);
+                       if(mysqli_num_rows($result)>0){
+                            while($row = mysqli_fetch_array($result)){
+
+                            
+                    ?>
                     <div class="menu_item Yoshinoya_beef_bowl">
-                        <h4 class="name">Yoshinoya beef bowl</h4>
-                        <span class="price">$10.99  <button type="submit"  name="Add">Add to Order</button><input type="number" id="qty" name="qty"
-   min="0" max="20"></span>
-                        <p class="description">Food description</p>
+                        <h4 class="text-info"><?php echo $row["dishname"]; ?></h4>
+                        <span class="price"><?php echo $row["price"]; ?> 
+                        <input type = "text" name = "quantity" class = "form-control" value ="1">
+                        <input type ="hidden" name ="hidden_name" value="<?php echo $row["dishname"]; ?>">
+                        <input type ="hidden" name ="hidden_name" value="<?php echo $row["price"]; ?>">
+                        <input type="submit" name="add" style = "margin-top:5px;" clas="btn btn-success" value="Add to order">
+                        </span>
+                        <p class="description"><?php echo $row["dishdesc"]; ?></p>
                         
                         <hr>
                     </div>
+                    <?php
+                            }}
+                            ?>
                 
-                    <div class="menu_item Nigirizushi">
-                        <h4 class="name">Nigirizushi</h4>
-                        <span class="price">$10.99  <button>Add to Order</button><input type="number" id="qty" name="qty"
-   min="0" max="20"></span>							<p class="description">Food Description</p>
-                        <hr>
-                    </div>
-                    <div class="menu_item Tamagoyaki">
-                        <h4 class="name">Tamagoyaki</h4>
-                        <span class="price">$10.99  <button>Add to Order</button><input type="number" id="qty" name="qty"
-   min="0" max="20"></span>							<p class="description">Food Description</p>
-                        <hr>
-                    </div>
-                </div>
+                    
                 <div class="menu_section Chef_2_Dishes"><h3>Cultural Dishes</h3>
-                    <div class="menu_item Unadon">
-                        <h4 class="name">Unadon</h4>
-                        <span class="price">$10.99  <button>Add to Order</button><input type="number" id="qty" name="qty"
-   min="0" max="20"></span>							<p class="description">Dish Description</p>
+                <?php
+                        $query = "SELECT * FROM cultdish ORDER BY id ASC";
+                        $result = mysqli_query($conn,$query);
+                       if(mysqli_num_rows($result)>0){
+                            while($row = mysqli_fetch_array($result)){
+
+                            
+                    ?>
+                    <div class="menu_item Yoshinoya_beef_bowl">
+                        <h4 class="text-info"><?php echo $row["dishname"]; ?></h4>
+                        <span class="price"><?php echo $row["price"]; ?> 
+                        <input type = "text" name = "quantity" class = "form-control" value ="1">
+                        <input type ="hidden" name ="hidden_name" value="<?php echo $row["dishname"]; ?>">
+                        <input type ="hidden" name ="hidden_name" value="<?php echo $row["price"]; ?>">
+                        <input type="submit" name="add" style = "margin-top:5px;" clas="btn btn-success" value="Add to order">
+                        </span>
+                        <p class="description"><?php echo $row["dishdesc"]; ?></p>
+                        
                         <hr>
                     </div>
-                
-                    <div class="menu_item Aburi_zushi">
-                        <h4 class="name">Aburi zushi</h4>
-                        <span class="price">$10.99  <button>Add to Order</button><input type="number" id="qty" name="qty"
-   min="0" max="20"></span>							<p class="description">Dish Description</p>
-                        <hr>
-                    </div>
-                    <div class="menu_item japanese_dumpling">
-                        <h4 class="name">japanese dumpling</h4>
-                        <span class="price">$10.99  <button>Add to Order</button><input type="number" id="qty" name="qty"
-   min="0" max="20"></span>							<p class="description">Dish Description</p>
-                        <hr>
-                    </div>
+                    <?php
+                            }}
+                            ?>
                 </div></section>
 
 
