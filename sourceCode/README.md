@@ -6,7 +6,7 @@ In order to access this project, we need to download xampp for our database and 
 
 XAMPP steps:<br>1.Once XAMPP has been downloaded, we need to create a database named logininfo.
 <br>2.Then we will need to create tables using the SQLstatement.txt file that I created.
-<br>3.Then we create a folder named SESERVER inside the folder htdocs. The path for this htdocs folder will be xampp/htdocs
+<br>3.Then we create a folder named SESERVER inside the folder htdocs. This folder will include all the source code. The path for this htdocs folder will be xampp/htdocs
 
 
 
