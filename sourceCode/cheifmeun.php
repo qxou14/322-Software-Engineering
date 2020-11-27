@@ -14,14 +14,20 @@
 
 
 <div class = "logos">
-    <u1> 
-        <li><a href = ""> Demote</a></li>
-        <li><a href = ""> Fire </a></li>
-        <li><a href = "deregister.php"> de-register </a></li>
-        <li><a href = ""> Compliment/complain </a></li>
-        <li><a href = "levelupUser.php"> Promote Users </a></li>  <!-- upgrade customer to VIP -->
+    <u1>
+        <?php 
+            if($_SESSION['username'] == "cheif1")
+            {
+                echo '<li><a href = "cheif1.php">Edit Meun</a></li>';
+            }
+            else if ($_SESSION['username'] == "cheif2")
+            {
+                echo '<li><a href = "cheif2.php">Edit Meun</a></li>';
+            } 
+        
+        ?> 
+        
         <li><a href = "logout.php"> log out </a></li>
     </u1>
 </div>
     
-

@@ -28,6 +28,7 @@
         <br>
         <input type = "submit">
         <a href="adminLogin.php"> <b>Admin?<b> </a>
+        <a href="cheifloginPlace.php"> <b>Cheif<b> </a>
     </form>
 </div>
 <?php
