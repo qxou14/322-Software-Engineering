@@ -61,8 +61,8 @@ CREATE TABLE popdish(
 	dishname varchar(255),
 	dishdesc varchar(255),
 	price double,
-	rating int DEFAULT 0
-	totalRating int DEFAULT 0;
+	rating int DEFAULT 0,
+	totalRating int DEFAULT 0,
 	FOREIGN KEY(cheif_id) REFERENCES cheif(cheif_id)
 );
 
@@ -72,8 +72,8 @@ CREATE TABLE cultdish(
 	dishname varchar(255),
 	dishdesc varchar(255),
 	price double,
-	rating int DEFAULT 0
-	totalRating int DEFAULT 0;
+	rating int DEFAULT 0,
+	totalRating int DEFAULT 0,
 	FOREIGN KEY(cheif_id) REFERENCES cheif(cheif_id)
 );
 
