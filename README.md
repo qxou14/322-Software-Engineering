@@ -12,8 +12,7 @@ XAMPP steps:<br>1.Once XAMPP has been downloaded, we need to create a database n
 
 Visual Studio Code steps:
 <br>
-1.Place the SESERVER folder inside the working enviroment, if you are new user of XAMPP pleases delete the "dashboard"
-folder inside the htdocs folder
+1.Place the SESERVER folder inside the working enviroment, if you are new user of XAMPP pleases delete the "index.php File" inside the htdocs folder
 <br>
 2.Clone all the source code and put them inside this folder.
 
