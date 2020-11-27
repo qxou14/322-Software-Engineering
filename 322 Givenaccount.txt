@@ -1,0 +1,14 @@
+admin account:
+
+username:Admin
+password:Adminpassword123
+
+
+cheif account:
+
+username:cheif1
+password:cheif1password123
+
+username:cheif2
+password:cheif2password123
+
