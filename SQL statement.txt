@@ -12,6 +12,68 @@ create table info(
 	Spend float DEFAULT 0,
 	TotalOrder int DEFAULT 0,
 	expire int DEFAULT 0
-
-
 );
+Create table cheif(
+    
+    cheif_id int  PRIMARY KEY check (cheif_id in(1,2)),
+    name varchar(50),
+    complain int DEFAULT 0,  #total complain
+    compliment int DEFAULT 0, #total compliment
+    salary float DEFAULT 3000,
+    demoted int DEFAULT 0, #if demoted >1 add salaray  if demoted = -1 reduce salary if demoted = -2->fire
+    situation int DEFAULT 0 #if situation >=3 this means this cheif will be promoted <=3 will be demoted
+)
+#check statement make sure there are only two cheifs
+# punishment increase by 1 if rating low or recieved one complain
+//2 cheif will be given username as  cheif1  p:cheif1password    and cheif2   p:cheif2password
+
+
+create table dishes(
+	cheif_id int,
+    dish_id int primary key,
+    dish_name varchar(50),
+    rating int default 0,
+    rateTime int default 0, #number of rating, will use that for rating 
+    description varchar(255),
+    FOREIGN KEY(cheif_id) REFERENCES cheif(cheif_id)
+    
+)
+
+
+
+Create table delivery(
+    
+    delivery_id int  PRIMARY KEY check (delivery_id in(1,2)),
+    dish_id int,
+    name varchar(50),
+    complain int DEFAULT 0,  #total complain
+    compliment int DEFAULT 0, #total compliment
+    salary float DEFAULT 2500,
+    demoted int DEFAULT 0, #if demoted >1 add salaray  if demoted = -1 reduce salary if demoted = -2->fire
+    situation int DEFAULT 0, #if situation >=3 this means this cheif will be promoted <=3 will be demoted
+    FOREIGN KEY(dish_id) REFERENCES dishes(dish_id)
+)
+
+
+CREATE TABLE popdish(
+	id int  PRIMARY KEY,
+	cheif_id int,
+	dishname varchar(255),
+	dishdesc varchar(255),
+	price double,
+	rating int DEFAULT 0
+	totalRating int DEFAULT 0;
+	FOREIGN KEY(cheif_id) REFERENCES cheif(cheif_id)
+);
+
+CREATE TABLE cultdish(
+	id int PRIMARY KEY,
+	cheif_id int,
+	dishname varchar(255),
+	dishdesc varchar(255),
+	price double,
+	rating int DEFAULT 0
+	totalRating int DEFAULT 0;
+	FOREIGN KEY(cheif_id) REFERENCES cheif(cheif_id)
+);
+
