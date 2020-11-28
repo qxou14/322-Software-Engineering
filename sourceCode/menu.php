@@ -1,22 +1,11 @@
 <?php
-  
-   $servername = "localhost";
-   $username = "root";
-   $password = "";
-   $dbname = "logininfo";
-   
-   // Create connection
-   $conn = mysqli_connect($servername,$username,$password,$dbname);
-   
-   // Check connection
-   if ($conn->connect_error) {
-       die("Connection failed: " . $conn->connect_error);
-     }
-     
-     
-     
+    include "sectionStart.php"; 
+    include "database.php"; 
+    include "price.php";
+    $username = $_SESSION['username'];
+    
+    
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,6 +29,7 @@
 <section class="menu"><h2 class="menu_title">Our Menu</h2>
                     <div class="menu_section Chef_1_Dishes"><h3>Popular Dishes</h3>
                     <?php
+                        $visited = 0;
                         $query = "SELECT * FROM popdish ORDER BY id ASC";
                         $result = mysqli_query($conn,$query);
                        if(mysqli_num_rows($result)>0){
@@ -50,10 +40,63 @@
                     <div class="menu_item Yoshinoya_beef_bowl">
                         <h4 class="text-info"><?php echo $row["dishname"]; ?></h4>
                         <span class="price"><?php echo $row["price"]; ?> 
-                        <input type = "text" name = "quantity" class = "form-control" value ="1">
-                        <input type ="hidden" name ="hidden_name" value="<?php echo $row["dishname"]; ?>">
-                        <input type ="hidden" name ="hidden_name" value="<?php echo $row["price"]; ?>">
-                        <input type="submit" name="add" style = "margin-top:5px;" clas="btn btn-success" value="Add to order">
+                        <form action = 'menu.php' method = "Post">
+                            <input type = "number" name = "quantity" min = 1 value = 1 > 
+                            <button type ="submit" name = "submit" value = <?php echo 'Buy'.$row["dishname"] ?>> Add to Cart </button> 
+                        </form>
+
+                        <?php
+                            if(isset($_POST['submit']))
+                            {
+                                $choose = $_POST['submit'];
+                                $meun = ltrim($choose, "Buy");
+                                if(isset($_POST['quantity']))
+                                {
+                                    $quantity = $_POST['quantity'];
+                                }
+                               
+                                switch($choose)
+                                {
+                                    case "BuyYoshinoya":
+                                        if($visited == 0)
+                                        {
+                                            $visited = 1;
+                                            $price = $quantity * $beefPrice;
+                                            $sql = "INSERT INTO ordering (username,dish_name,quantity,price) VALUES ('$username','$meun',$quantity,$price);" ;
+                                            mysqli_query($conn,$sql);
+                                        }
+                                        
+                                        break;
+                                    case "BuyNigirizushi":
+                                        if($visited == 0)
+                                        {
+                                            $visited = 1;
+                                            $price = $quantity * $NigirizushiPrice;
+                                            $sql = "INSERT INTO ordering (username,dish_name,quantity,price) VALUES ('$username','$meun',$quantity,$price);" ;
+                                         mysqli_query($conn,$sql);
+
+                                        }
+                                        
+                                       
+                                        break;
+                                    case "BuyTamagoyaki":
+                                        if($visited == 0)
+                                        {
+                                            $visited = 1;
+                                            $price = $quantity * $TamagoyakiPrice;
+                                            $sql = "INSERT INTO ordering (username,dish_name,quantity,price) VALUES ('$username','$meun',$quantity,$price);" ;
+                                            mysqli_query($conn,$sql);
+                                        }
+                                        
+                                        
+                                        break;
+                                }
+                                    
+                            }
+                        
+                        ?>
+                                           
+                       
                         </span>
                         <p class="description"><?php echo $row["dishdesc"]; ?></p>
                         
@@ -76,12 +119,65 @@
                     <div class="menu_item Yoshinoya_beef_bowl">
                         <h4 class="text-info"><?php echo $row["dishname"]; ?></h4>
                         <span class="price"><?php echo $row["price"]; ?> 
-                        <input type = "text" name = "quantity" class = "form-control" value ="1">
-                        <input type ="hidden" name ="hidden_name" value="<?php echo $row["dishname"]; ?>">
-                        <input type ="hidden" name ="hidden_name" value="<?php echo $row["price"]; ?>">
-                        <input type="submit" name="add" style = "margin-top:5px;" clas="btn btn-success" value="Add to order">
+                        <form action = 'menu.php' method = "Post">
+                            <input type = "number" name = "quantity" min = 1 value = 1 > 
+                            <button type ="submit" name = "submit" value = <?php echo 'Buy'.$row["dishname"] ?>> Add to Cart </button> 
+                        </form>
+                        
                         </span>
                         <p class="description"><?php echo $row["dishdesc"]; ?></p>
+
+                        <?php
+                            if(isset($_POST['submit']))
+                            {
+                                $choose = $_POST['submit'];
+                                $meun = ltrim($choose, "Buy");
+                                if(isset($_POST['quantity']))
+                                {
+                                    $quantity = $_POST['quantity'];
+                                }
+                               
+                                switch($choose)
+                                {
+                                    case "BuyUnadon":
+                                        if($visited == 0)
+                                        {
+                                            $visited = 1;
+                                            $price = $quantity * $UnadonPrice;
+                                            $sql = "INSERT INTO ordering (username,dish_name,quantity,price) VALUES ('$username','$meun',$quantity,$price);" ;
+                                            mysqli_query($conn,$sql);
+                                        }
+                                        
+                                        break;
+                                    case "BuyAburiZushi":
+                                        if($visited == 0)
+                                        {
+                                            $visited = 1;
+                                            $price = $quantity * $AburiZushiPrice;
+                                            $sql = "INSERT INTO ordering (username,dish_name,quantity,price) VALUES ('$username','$meun',$quantity,$price);" ;
+                                         mysqli_query($conn,$sql);
+
+                                        }
+                                        
+                                       
+                                        break;
+                                    case "BuyJapaneseDumpling":
+                                        
+                                        if($visited == 0)
+                                        {
+                                            $visited = 1;
+                                            $price = $quantity * $JapaneseDumpling;
+                                            $sql = "INSERT INTO ordering (username,dish_name,quantity,price) VALUES ('$username','$meun',$quantity,$price);" ;
+                                            mysqli_query($conn,$sql);
+                                        }
+                                        
+                                        
+                                        break;
+                                }
+                                    
+                            }
+                        
+                        ?>
                         
                         <hr>
                     </div>
@@ -89,6 +185,38 @@
                             }}
                             ?>
                 </div></section>
+
+        <table>
+            <caption>Ordered</caption>
+                <tr=>  
+                    <th>dish_name</th>
+                    <th>quantity</th>
+                    <th>price</th>
+                
+                <tr> 
+                <?php
+                     
+                    
+                    $result = $conn -> query("SELECT dish_name,quantity,price FROM Ordering where username = '$username'");
+                    $i = 0;
+                   
+                    if ($result -> num_rows >0)
+                    {
+                        {
+                            while($row = $result -> fetch_assoc())
+                            {
+                                echo "<tr valign='middle'>";
+                                echo "<td>".$row['dish_name']."</td>";
+                                echo "<td>".$row['quantity']."</td>";
+                                echo "<td>".$row['price']."</td>";
+                                echo "</tr>";         
+                            }
+                        }
+                    
+                        $i++;
+                    }                    
+                ?>
+    </table>
 
 
 
