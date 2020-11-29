@@ -77,3 +77,16 @@ CREATE TABLE cultdish(
 	FOREIGN KEY(cheif_id) REFERENCES cheif(cheif_id)
 );
 
+
+
+create table Ordering(
+    orders int AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(20),
+    dish_name VARCHAR(255),
+    quantity int,
+    price float,
+    special int  #1 is for vip
+
+);
+
+
