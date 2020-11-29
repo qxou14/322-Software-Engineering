@@ -5,7 +5,6 @@ In order to access this project, we need to download xampp for our database and 
 <br>
 
 XAMPP steps:<br>1.Once XAMPP has been downloaded ,you will need to type localhost/phpmyadmin in the browser
-
 <br>2.On the top-left side press "New" and create a database name logininfo, and creat table by Pressing "SQL" and copy the SQL Code inside the "SQL statement.txt" file that is in side the folder.
 <br>3.Then we create a folder named SESERVER inside the xampp folder htdocs(when ever you the place you download your xampp). This folder will include all the source code that are in our "souceCode" folder. (The path for this folder will be xampp/htdocs/SESERVER)
 
