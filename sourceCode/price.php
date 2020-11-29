@@ -8,6 +8,6 @@ $UnadonPrice = 11.99;
 $AburiZushiPrice = 9.99;
 $JapaneseDumpling = 6.99;
 
-
+$vipdiscount = 0.9;
 
 ?>

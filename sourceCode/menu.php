@@ -1,4 +1,5 @@
 <?php
+    ob_start();
     include "sectionStart.php"; 
     include "database.php"; 
     include "price.php";
@@ -6,6 +7,9 @@
     
     
 ?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,12 +26,30 @@
     <span><a href = "deposit.php"> Deposit</a></span>
     <span><a href = "cancelAccount.php"> Cancellation</a></span>
     <span><a href = "logout.php"> Log out</a></span>
-</div>>
-
+</div>
 </head>
 <body>
+<h3><i>Welcome User: <?php echo $_SESSION['username']; ?> <i></h3>
+
+<?php 
+    $username = $_SESSION['username'];
+    
+    $sql = "SELECT warning FROM info  WHERE username = '$username' ";
+    $result = $conn->query($sql);
+    $row = $result ->fetch_assoc();
+    echo "<h3><i> Warnings: {$row['warning']} </i></h3>";
+
+    $sql = "SELECT saving FROM info  WHERE username = '$username' ";
+    $result = $conn->query($sql);
+    $row = $result->fetch_assoc();
+    $balance = $row['saving'];
+    echo "<h3><i> Money left: {$row['saving']} </i></h3>";
+
+?>
+
+
 <section class="menu"><h2 class="menu_title">Our Menu</h2>
-                    <div class="menu_section Chef_1_Dishes"><h3>Popular Dishes</h3>
+    <div class="menu_section Chef_1_Dishes"><h3>Popular Dishes</h3>
                     <?php
                         $visited = 0;
                         $query = "SELECT * FROM popdish ORDER BY id ASC";
@@ -91,6 +113,8 @@
                                         
                                         break;
                                 }
+                                header("location: ../SESERVER/menu.php");
+                               
                                     
                             }
                         
@@ -155,7 +179,7 @@
                                             $visited = 1;
                                             $price = $quantity * $AburiZushiPrice;
                                             $sql = "INSERT INTO ordering (username,dish_name,quantity,price) VALUES ('$username','$meun',$quantity,$price);" ;
-                                         mysqli_query($conn,$sql);
+                                            mysqli_query($conn,$sql);
 
                                         }
                                         
@@ -173,12 +197,13 @@
                                         
                                         
                                         break;
-                                }
+
                                     
+                                }
                             }
-                        
+                            
+                            
                         ?>
-                        
                         <hr>
                     </div>
                     <?php
@@ -192,12 +217,13 @@
                     <th>dish_name</th>
                     <th>quantity</th>
                     <th>price</th>
+                    <th>Remove Order</th>
                 
                 <tr> 
                 <?php
-                     
                     
-                    $result = $conn -> query("SELECT dish_name,quantity,price FROM Ordering where username = '$username'");
+                    
+                    $result = $conn -> query("SELECT orders,dish_name,quantity,price FROM Ordering where username = '$username'");
                     $i = 0;
                    
                     if ($result -> num_rows >0)
@@ -209,14 +235,72 @@
                                 echo "<td>".$row['dish_name']."</td>";
                                 echo "<td>".$row['quantity']."</td>";
                                 echo "<td>".$row['price']."</td>";
+                                echo "<td>
+                                        <a href = 'delete.php?choice=".$row['orders']."'>Cancel Order
+                                    </td>";
                                 echo "</tr>";         
                             }
                         }
                     
                         $i++;
-                    }                    
+                    }
+                    
+                 
                 ?>
     </table>
+
+    <?php
+ 
+                    $result = $conn -> query("SELECT price FROM Ordering where username = '$username'");
+                    $i = 0;
+                    $cost = 0;
+                   
+                    if ($result -> num_rows >0)
+                    {
+                        {
+                            while($row = $result -> fetch_assoc())
+                            {
+                                
+                                $cost += $row['price'];
+                        
+                            }
+                        }
+                    
+                        $i++;
+                    }
+                    echo "Total cost is $cost";
+
+                    if(isset($_POST['buy']))
+                    {
+                        if($balance >= $cost)
+                        {
+                            $remain = $balance - $cost;
+                            $sql = "UPDATE info SET saving =$remain WHERE username = '$username'";
+                            mysqli_query($conn,$sql);
+
+                            $sqlD = "DELETE FROM ordering WHERE username = '$username'";
+                            mysqli_query($conn,$sqlD);
+                           
+                        }
+                        else 
+                        {   
+                            header("location: ../SESERVER/deposit.php");
+                            ob_end_flush();
+                            
+                            
+                        }
+                        header("location: ../SESERVER/menu.php");
+                        ob_end_flush();
+                     
+                    }
+                    
+
+                ?>
+
+    <form action = 'menu.php' method = 'POST'  >
+                <button type = 'submit' name = 'buy' >Purchased now!</button>
+    </form>
+
 
 
 
