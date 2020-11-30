@@ -18,6 +18,7 @@
         <li><a href = ""> Demote</a></li>
         <li><a href = ""> Fire </a></li>
         <li><a href = "deregister.php"> de-register </a></li>
+        <li><a href = "appList.php"> Appointment List </a></li>
         <li><a href = ""> Compliment/complain </a></li>
         <li><a href = "levelupUser.php"> Promote Users </a></li>  <!-- upgrade customer to VIP -->
         <li><a href = "logout.php"> log out </a></li>

@@ -22,6 +22,7 @@
 <div class = "introduction"> The Online Restaurant </div>
 <div class = "look">
     <span><a href="afterlogin.php"> Order </a></span>
+    <span><a href = "zDinein.php">Dine in </a></span>
     <span><a href = "">Complain</a></span>
     <span><a href = "deposit.php"> Deposit</a></span>
     <span><a href = "cancelAccount.php"> Cancellation</a></span>
@@ -274,12 +275,11 @@
                     {
                         if($balance >= $cost)
                         {
-                            $remain = $balance - $cost;
-                            $sql = "UPDATE info SET saving =$remain WHERE username = '$username'";
-                            mysqli_query($conn,$sql);
-
-                            $sqlD = "DELETE FROM ordering WHERE username = '$username'";
-                            mysqli_query($conn,$sqlD);
+                            
+                            $_SESSION["money"] = $balance - $cost;
+                         
+                            header("location: ../SESERVER/pickmethod.php");
+                            ob_end_flush();
                            
                         }
                         else 
@@ -289,8 +289,7 @@
                             
                             
                         }
-                        header("location: ../SESERVER/menu.php");
-                        ob_end_flush();
+                       
                      
                     }
                     
