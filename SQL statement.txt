@@ -13,6 +13,9 @@ create table info(
 	TotalOrder int DEFAULT 0,
 	expire int DEFAULT 0
 );
+
+
+
 Create table cheif(
     
     cheif_id int  PRIMARY KEY check (cheif_id in(1,2)),
@@ -41,18 +44,53 @@ create table dishes(
 
 
 
-Create table delivery(
+Create table deliveryMen(
     
     delivery_id int  PRIMARY KEY check (delivery_id in(1,2)),
-    dish_id int,
     name varchar(50),
     complain int DEFAULT 0,  #total complain
     compliment int DEFAULT 0, #total compliment
     salary float DEFAULT 2500,
     demoted int DEFAULT 0, #if demoted >1 add salaray  if demoted = -1 reduce salary if demoted = -2->fire
-    situation int DEFAULT 0, #if situation >=3 this means this cheif will be promoted <=3 will be demoted
-    FOREIGN KEY(dish_id) REFERENCES dishes(dish_id)
+    situation int DEFAULT 0, #if situation >=3 this means this  deliveryMan will be promoted <=3 will be demoted
+rating int DEFAULT 0
 )
+
+
+Create table deliveryOrder(
+
+	number int AUTO_INCREMENT PRIMARY KEY,
+    	delivery_id int,
+	deliveryName VARCHAR(20), #name of deliveryman
+	foodName VARCHAR(20),  #name of dish
+	quantity int, #number of items
+	price float,
+    	name VARCHAR(20), #name of customer
+	username VARCHAR(20),
+    	addr VARCHAR(50),
+	phone varchar(20),
+    	additionTime TIMESTAMP DEFAULT CURRENT_TIMESTAMP(),
+	deliveryStatus VARCHAR(10) DEFAULT "no",
+    	FOREIGN KEY(delivery_id) REFERENCES deliverymen(delivery_id)  
+)
+
+
+
+
+create table deliverySelected(
+	number int AUTO_INCREMENT PRIMARY KEY,
+	delivery_id int,
+	delivery_name VARCHAR(20),
+	username VARCHAR(20),
+	customerName VARCHAR(20),
+	addr varchar(50),
+	phone varchar(20)
+)
+
+
+
+
+
 
 
 CREATE TABLE popdish(
@@ -87,3 +125,58 @@ create table Ordering(
     special int  #1 is for vip
 
 );
+
+
+insert into cheif (cheif_id,name)VALUES(1,'cheif1')
+insert into cheif (cheif_id,name)VALUES(2,'cheif2')
+
+insert into popdish(id,cheif_id,dishname,dishdesc,price) values (1,1,'Yoshinoya beef bowl','Good food!',10.99)
+insert into popdish(id,cheif_id,dishname,dishdesc,price) values (2,1,'Nigirizushi','Good food!',12.99)
+insert into popdish(id,cheif_id,dishname,dishdesc,price) values (3,1,'Tamagoyaki','Good food!',14.99)
+
+insert into cultdish(id,cheif_id,dishname,dishdesc,price) values (4,2,'Unadon','Good food!',11.99)
+insert into cultdish(id,cheif_id,dishname,dishdesc,price) values (5,2,'AburiZushi','Good food!',9.99)
+insert into cultdish(id,cheif_id,dishname,dishdesc,price) values (6,2,'JapaneseDumpling','Good food!',6.99)
+
+
+INSERT INTO deliveryMen(delivery_id,name) VALUES (1,"dilivery1")
+INSERT INTO deliveryMen(delivery_id,name) VALUES (2,"dilivery2")
+
+
+creat table appointment(
+
+	session_num int Primary key,
+	day VARCHAR(20),
+	startingTime int,
+	numberOfSeats int
+
+)
+
+
+create table ready(
+
+    
+	session_num int PRIMARY KEY,
+	day VARCHAR(20),
+	startTime int,
+	FullName varchar(20),
+    phoneNumber varchar(20),
+	
+
+)
+
+create table takeout(
+
+    number int AUTO_INCREMENT primary key,
+	username varchar(20),
+	FullName varchar(20),
+    phoneNumber varchar(20),
+	dish_name VARCHAR(20),
+	quantity int,
+	price float
+
+)
+
+
+
+

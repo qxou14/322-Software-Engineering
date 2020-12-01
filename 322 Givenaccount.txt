@@ -12,3 +12,14 @@ password:cheif1password123
 username:cheif2
 password:cheif2password123
 
+deliveryman account:
+
+   delivery1 username : delivery1
+   $delivery1pass :delivery1password123
+
+    delivery2 : delivery2
+    delivery2pass :delivery2password123
+
+
+
+
