@@ -58,6 +58,14 @@
                 $sql = "UPDATE info SET saving =$remain WHERE username = '$username'";
                 mysqli_query($conn,$sql);
 
+
+                
+                $sqlC ="INSERT INTO takeout(username,FullName,phoneNumber,dish_name,quantity,price) 
+                SELECT i.username,i.FullName, i.phoneNumber, o.dish_name,o.quantity,o.price
+                FROM info i, ordering o
+                WHERE i.username = o.username";
+                mysqli_query($conn,$sqlC);
+
                 $sqlD = "DELETE FROM ordering WHERE username = '$username'";
                 mysqli_query($conn,$sqlD);
 
@@ -74,8 +82,59 @@
             {
                 echo "<h3 style = 'text-align:center'> You need to enter yes in order to take out! <h3>";
             }
+
+           
         }
 ?>
+
+
+        <table>
+
+        <caption>History</caption>
+                <tr=>
+                      
+                    <th>dish_name</th>
+                    <th>quantity</th>
+                    <th>price</th>
+                    
+                
+                <tr>  
+        
+            <?php   $result = $conn -> query("SELECT dish_name,quantity,price FROM takeout where username = '$username'");
+                    $i = 0;
+                   
+                    if ($result -> num_rows >0)
+                    {
+                        {
+                            while($row = $result -> fetch_assoc())
+                            {
+                                echo "<tr valign='middle'>";
+        
+                                echo "<td>".$row['dish_name']."</td>";
+                                echo "<td>".$row['quantity']."</td>";
+                                echo "<td>".$row['price']."</td>";
+                                echo "</tr>";         
+                            }
+                        }
+                    
+                        $i++;
+                    } 
+                    
+                    $search = $conn -> query("SELECT FullName,phoneNumber FROM info where username = '$username'");
+                    $row = $search->fetch_assoc();
+                    $name = $row['FullName'];
+                    $phone = $row['phoneNumber'];
+
+                    echo "<p>YOUR NAME: $name</p>";
+                    echo "<br>";
+                    echo "<p>YOUR PHONE: $phone</p>";
+                    
+                    ?>
+        
+        
+        
+        
+        </table>
 
     <form action = "zTakeout.php" method ="Post">
 
