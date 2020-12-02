@@ -241,7 +241,7 @@ create table appointment(
 	session_num int Primary key,
 	day VARCHAR(20),
 	startingTime int,
-	numberOfSeats int
+	numberOfSeats int DEFAULT 2
 
 );
 
