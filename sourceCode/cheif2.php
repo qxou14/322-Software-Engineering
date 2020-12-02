@@ -126,4 +126,76 @@
     </form>
 
 
+    <h1>Customer complaint/compliment </h1>
+    
+    <table border="0" cellpadding="0" cellspacing="0">
+                <tr bgcolor="#f87820">
+                    <td class=tabhead><img src="img/blank.gif" alt="" width="400" height="6"><br><b>Person Who complains/compliments</b></td>
+                    <td class=tabhead><img src="img/blank.gif" alt="" width="400" height="6"><br><b>Complained/Complimented person</b></td>
+                    <td class=tabhead><img src="img/blank.gif" alt="" width="400" height="6"><br><b>Compliant/Compliment</b></td>
+                    <td class=tabhead><img src="img/blank.gif" alt="" width="400" height="6"><br><b>Dispute</b></td>
+                    <td><img src="img/blank.gif" alt="" width="10" height="25"></td>
+                </tr>
+    
+    <?php
+         $username = $_SESSION['username'];
+          $sql2 = "SELECT PWCC, CCP, ComplaintOrCompliment, Dispute FROM complaint WHERE CCP='$username'; ";
+          $sql3=mysqli_query($conn,$sql2);
+          $resultCheck=mysqli_num_rows($sql3);
+          if($resultCheck>0){
+         while ($row = mysqli_fetch_array($sql3)) {
+             echo "<tr valign='middle'>";
+             echo "<td>".$row['PWCC']."</td>";
+             echo "<td>".$row['CCP']."</td>";
+             echo "<td>".$row['ComplaintOrCompliment']."</td>";
+             echo "<td>".$row['Dispute']."</td>";
+    
+             echo "</td>";
+             echo "</tr>";
+          
+         }
+        }
+    
+    ?>
+      </table>
+    
+      <form action = "cheif2.php" method = "POST">
+            <label>write down your response to the complaint/compliment:</label>
+            <textarea name="dispute" placeholder="Write down your response"></textarea> 
+            <br>
+            <tr><td>Your username:</td><td> <input type="text"  name="BCP" placeholder="Input your username"></td></tr>
+            <tr><td>Username of customer who complained you:</td><td> <input type="text"  name="CP" placeholder="Username of person who complained you"></td></tr>
+            <button type = "submit" name = "submit">Done!</button>
+    </form>
+
+    <?php 
+     
+
+     $username = $_SESSION['username'];
+ 
+     if(isset($_POST['dispute']))
+     {
+    
+      
+         $d =$_POST['dispute'];
+         $e=$_POST['BCP'];
+         $f=$_POST['CP'];
+         if(isset($e) && isset($f))
+         {
+ 
+             $sql4 = "UPDATE complaint SET Dispute ='$d' WHERE PWCC='$f' AND CCP='$e' ";
+             mysqli_query($conn,$sql4);
+ 
+             
+         }
+         else
+         {
+             echo " Please enter a valid response";
+         }
+         header("location: ../SESERVER/cheif2.php");
+       
+     }
+     ?>
+
+
 
