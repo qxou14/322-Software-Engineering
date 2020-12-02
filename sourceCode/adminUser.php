@@ -21,7 +21,7 @@
         <li><a href = "takeList.php"> Take-out List </a></li>
         <li><a href = "deliveryList.php"> Delivery List </a></li>
         <li><a href = "appList.php"> Appointment List </a></li>
-        <li><a href = "adminComplaint.php"> Compliment/complain </a></li>
+        <li><a href = ""> Compliment/complain </a></li>
         <li><a href = "levelupUser.php"> Promote Users </a></li>  <!-- upgrade customer to VIP -->
         <li><a href = "logout.php"> log out </a></li>
     </u1>

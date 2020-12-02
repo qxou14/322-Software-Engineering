@@ -23,14 +23,30 @@
 <div class = "look">
     <span><a href="afterlogin.php"> Order </a></span>
     <span><a href = "zDinein.php">Dine in </a></span>
-    <span><a href = "customerComplaint.php">Complain</a></span>
+    <span><a href = "">Complain</a></span>
     <span><a href = "deposit.php"> Deposit</a></span>
     <span><a href = "cancelAccount.php"> Cancellation</a></span>
     <span><a href = "logout.php"> Log out</a></span>
 </div>
 </head>
 <body>
+<h3><i>Welcome User: <?php echo $_SESSION['username']; ?> <i></h3>
 
+<?php 
+    $username = $_SESSION['username'];
+    
+    $sql = "SELECT warning FROM info  WHERE username = '$username' ";
+    $result = $conn->query($sql);
+    $row = $result ->fetch_assoc();
+    echo "<h3><i> Warnings: {$row['warning']} </i></h3>";
+
+    $sql = "SELECT saving FROM info  WHERE username = '$username' ";
+    $result = $conn->query($sql);
+    $row = $result->fetch_assoc();
+    $balance = $row['saving'];
+    echo "<h3><i> Money left: {$row['saving']} </i></h3>";
+
+?>
 
 
 <section class="menu"><h2 class="menu_title">Our Menu</h2>
