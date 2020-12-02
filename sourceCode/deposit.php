@@ -14,9 +14,7 @@
         <button type = "submit" name = "submit">Deposit!</button>
 </form>
 
-
 <?php 
-
     $username = $_SESSION['username'];
 
     if(isset($_POST['money']))

@@ -18,11 +18,11 @@
         <?php 
             if($_SESSION['username'] == "cheif1")
             {
-                echo '<li><a href = "cheif1.php">Edit Meun</a></li>';
+                echo '<li><a href = "cheif1.php">Edit Menu</a></li>';
             }
             else if ($_SESSION['username'] == "cheif2")
             {
-                echo '<li><a href = "cheif2.php">Edit Meun</a></li>';
+                echo '<li><a href = "cheif2.php">Edit Menu</a></li>';
             } 
         
         ?> 
@@ -30,4 +30,4 @@
         <li><a href = "logout.php"> log out </a></li>
     </u1>
 </div>
-    
+

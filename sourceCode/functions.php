@@ -53,6 +53,7 @@
 
     }
 
+   $TabooWords=array("disgusting","gross","bad","nasty");
 
 
 
