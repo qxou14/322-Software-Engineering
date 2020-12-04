@@ -66,6 +66,25 @@
                 WHERE i.username = o.username";
                 mysqli_query($conn,$sqlC);
 
+                $dataordering = $conn -> query("SELECT dish_id,quantity FROM ordering ");
+                    $i = 0;
+                   
+                    if ($dataordering -> num_rows >0)
+                    {
+                        {
+                            while($row = $dataordering -> fetch_assoc())
+                            {
+                                $rdishid = $row["dish_id"];
+                                $rquantity = $row["quantity"];
+                                $updatemenudish = "UPDATE menudish SET dishtotalorder = dishtotalorder + '$rquantity' WHERE id = '$rdishid' ";         
+                                mysqli_query($conn,$updatemenudish);
+                                $updateuser = "UPDATE $username SET nooforder = nooforder + '$rquantity' WHERE dishid = '$rdishid' ";
+                                mysqli_query($conn,$updateuser);
+                            }
+                        }
+                    
+                        $i++;
+                    }
                 $sqlD = "DELETE FROM ordering WHERE username = '$username'";
                 mysqli_query($conn,$sqlD);
 

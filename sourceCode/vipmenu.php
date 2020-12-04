@@ -2,6 +2,7 @@
     ob_start();
     include "sectionStart.php"; 
     include "database.php"; 
+    include "price.php";
     $username = $_SESSION['username'];
     
     
@@ -20,18 +21,18 @@
 
 <div class = "introduction"> The Online Restaurant </div>
 <div class = "look">
-    <span><a href="afterlogin.php"> Order </a></span>
+    <span><a href="vipafterlogin.php"> Order </a></span>
     <span><a href = "zDinein.php">Dine in </a></span>
     <span><a href = "customerComplaint.php">Complain</a></span>
     <span><a href = "deposit.php"> Deposit</a></span>
     <span><a href = "cancelAccount.php"> Cancellation</a></span>
     <span><a href = "Recommended.php"> Recommended</a></span>
-    <span><a href = "Rating.php"> Rate our Dish</a></span>
+    <span><a href = "vipRating.php"> Rating</a></span>
     <span><a href = "logout.php"> Log out</a></span>
 </div>
 </head>
 <body>
-<h3><i>Welcome User: <?php echo $_SESSION['username']; ?> <i></h3>
+<h3><i>Welcome VIP User: <?php echo $_SESSION['username']; ?> <i></h3>
 
 <?php 
     $username = $_SESSION['username'];
@@ -49,7 +50,7 @@
 
 ?>
 
-  
+
 <section class="menu"><h2 class="menu_title">Our Menu</h2>
     <div class="menu_section Chef_1_Dishes"><h3>Popular Dishes</h3>
                     <?php
@@ -64,7 +65,7 @@
                     <div class="menu_item Yoshinoya_beef_bowl">
                     <h4 class="text-info"><?php echo $row["dishname"]; ?></h4>
                     <span class="price"><?php echo $row["price"]; ?> 
-                    <form action = 'menu.php' method = "Post">
+                    <form action = 'vipmenu.php' method = "Post">
                     <input type = "hidden" name = "dishid" value = <?php echo $row["id"]; ?>>
                     <input type = "hidden" name = "dishname" value = <?php echo $row["dishname"]; ?>>
                     <input type = "hidden" name = "price" value = <?php echo $row["price"]; ?>>
@@ -103,7 +104,7 @@
                             if($visited == 0)
                                     {
                                         $visited = 1;
-                                        $price = $quantity * $foodprice;
+                                        $price = $quantity * $foodprice * 0.9;
                                         $sql = "INSERT INTO ordering (username,dish_name,quantity,price,chef_id,dish_id) VALUES ('$username','$dishname',$quantity,$price,'$chefid',$dishid);" ;
                                         mysqli_query($conn,$sql);
                                     }
@@ -130,10 +131,10 @@
 
                             
                     ?>
-                    <div class="menu_item Yoshinoya_beef_bowl">
+                   <div class="menu_item Yoshinoya_beef_bowl">
                         <h4 class="text-info"><?php echo $row["dishname"]; ?></h4>
                         <span class="price"><?php echo $row["price"]; ?> 
-                        <form action = 'menu.php' method = "Post">
+                        <form action = 'vipmenu.php' method = "Post">
                         <input type = "hidden" name = "dishid" value = <?php echo $row["id"]; ?>>
                         <input type = "hidden" name = "dishname" value = <?php echo $row["dishname"]; ?>>
                         <input type = "hidden" name = "price" value = <?php echo $row["price"]; ?>>
@@ -172,7 +173,75 @@
                                 if($visited == 0)
                                         {
                                             $visited = 1;
-                                            $price = $quantity * $foodprice;
+                                            $price = $quantity * $foodprice * 0.9;
+                                            $sql = "INSERT INTO ordering (username,dish_name,quantity,price,chef_id,dish_id) VALUES ('$username','$dishname',$quantity,$price,'$chefid',$dishid);" ;
+                                            mysqli_query($conn,$sql);
+                                        }
+                                
+                                    
+                                
+                            }
+                            
+                            
+                        ?>
+                        <hr>
+                    </div>
+                    <?php
+                            }}
+                            ?>
+                </div>
+                <div class="menu_section Chef_2_Dishes"><h3>VIP Dishes</h3>
+                <?php
+                        $query = "SELECT * FROM menudish WHERE SPECIAL ='1' ORDER BY id ASC ";
+                        $result = mysqli_query($conn,$query);
+                       if(mysqli_num_rows($result)>0){
+                            while($row = mysqli_fetch_array($result)){
+
+                            
+                    ?>
+                    <div class="menu_item Yoshinoya_beef_bowl">
+                        <h4 class="text-info"><?php echo $row["dishname"]; ?></h4>
+                        <span class="price"><?php echo $row["price"]; ?> 
+                        <form action = 'vipmenu.php' method = "Post">
+                        <input type = "hidden" name = "dishid" value = <?php echo $row["id"]; ?>>
+                        <input type = "hidden" name = "dishname" value = <?php echo $row["dishname"]; ?>>
+                        <input type = "hidden" name = "price" value = <?php echo $row["price"]; ?>>
+                            <input type = "hidden" name = "chefid" value = <?php echo $row["cheif_id"]; ?>>
+                            <input type = "number" name = "quantity" min = 1 value = 1 > 
+                            <button type ="submit" name = "submit" value = <?php echo 'Buy'.$row["dishname"] ?>> Add to Cart </button> 
+                        </form>
+                        
+                        </span>
+                        <p class="description"><?php echo $row["dishdesc"]; ?></p>
+
+                        <?php
+                            if(isset($_POST['submit']))
+                            {
+                                
+                                if(isset($_POST['chefid']))
+                                {
+                                    $chefid = $_POST['chefid'];
+                                }
+                                if(isset($_POST['dishid']))
+                                {
+                                    $dishid = $_POST['dishid'];
+                                }
+                                if(isset($_POST['price']))
+                                {
+                                    $foodprice = $_POST['price'];
+                                }
+                                if(isset($_POST['quantity']))
+                                {
+                                    $quantity = $_POST['quantity'];
+                                }
+                                if(isset($_POST['dishname']))
+                                {
+                                    $dishname = $_POST['dishname'];
+                                }
+                                if($visited == 0)
+                                        {
+                                            $visited = 1;
+                                            $price = $quantity * $foodprice * 0.9;
                                             $sql = "INSERT INTO ordering (username,dish_name,quantity,price,chef_id,dish_id) VALUES ('$username','$dishname',$quantity,$price,'$chefid',$dishid);" ;
                                             mysqli_query($conn,$sql);
                                         }
@@ -190,12 +259,13 @@
                             ?>
                 </div></section>
 
+
         <table>
             <caption>Ordered</caption>
                 <tr=>  
                     <th>dish_name</th>
                     <th>quantity</th>
-                    <th>price</th>
+                    <th>VIP Dicsount price</th>
                     <th>Remove Order</th>
                 
                 <tr> 
@@ -215,7 +285,7 @@
                                 echo "<td>".$row['quantity']."</td>";
                                 echo "<td>".$row['price']."</td>";
                                 echo "<td>
-                                        <a href = 'delete.php?choice=".$row['orders']."'>Cancel Order
+                                        <a href = 'vipdelete.php?choice=".$row['orders']."'>Cancel Order
                                     </td>";
                                 echo "</tr>";         
                             }
@@ -274,7 +344,7 @@
 
                 ?>
 
-    <form action = 'menu.php' method = 'POST'  >
+    <form action = 'vipmenu.php' method = 'POST'  >
                 <button type = 'submit' name = 'buy' >Purchased now!</button>
     </form>
 
