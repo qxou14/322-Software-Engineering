@@ -152,31 +152,7 @@ create table deliverySelected(
 
 	
 
-	
-
-	CREATE TABLE popdish(
-
-		id int  PRIMARY KEY,
-
-		cheif_id int,
-
-		dishname varchar(255),
-
-		dishdesc varchar(255),
-
-		price double,
-
-		rating int DEFAULT 0,
-
-		totalRating int DEFAULT 0,
-
-		FOREIGN KEY(cheif_id) REFERENCES cheif(cheif_id)
-
-	);
-
-	
-
-	CREATE TABLE cultdish(
+CREATE TABLE menudish(
 
 		id int PRIMARY KEY,
 
@@ -187,37 +163,52 @@ create table deliverySelected(
 		dishdesc varchar(255),
 
 		price double,
+		
+		dishtotalorder int DEFAULT 0,
 
-		rating int DEFAULT 0,
+		dishrating int DEFAULT 0,
 
-		totalRating int DEFAULT 0,
+		dishnoofrating int DEFAULT 0,
 
-		FOREIGN KEY(cheif_id) REFERENCES cheif(cheif_id)
+		dishimage varchar(255),
 
-	);
-
-CREATE TABLE vipdish(
-
-		id int PRIMARY KEY,
-
-		cheif_id int,
-
-		dishname varchar(255),
-
-		dishdesc varchar(255),
-
-		price double,
-
-		rating int DEFAULT 0,
-
-		totalRating int DEFAULT 0,
+		SPECIAL int,
 
 		FOREIGN KEY(cheif_id) REFERENCES cheif(cheif_id)
 
 	);
 	
+insert into menudish(id,cheif_id,dishname,dishdesc,price,SPECIAL) values (1,1,'Yoshinoya beef bowl','Good food!',10.99,0);
+insert into menudish(id,cheif_id,dishname,dishdesc,price,SPECIAL) values (2,1,'Nigirizushi','Good food!',12.99,0);
+insert into menudish(id,cheif_id,dishname,dishdesc,price,SPECIAL) values (3,1,'Tamagoyaki','Good food!',14.99,0);
+insert into menudish(id,cheif_id,dishname,dishdesc,price,SPECIAL) values (7,1,'Dorayaki','Good food!',7.99,0);
+insert into menudish(id,cheif_id,dishname,dishdesc,price,SPECIAL) values (8,1,'Teppanyaki','Good food!',12.99,0);
 
+insert into menudish(id,cheif_id,dishname,dishdesc,price,SPECIAL) values (4,2,'Unadon','Good food!',11.99,0);
+insert into menudish(id,cheif_id,dishname,dishdesc,price,SPECIAL) values (5,2,'AburiZushi','Good food!',9.99,0);
+insert into menudish(id,cheif_id,dishname,dishdesc,price,SPECIAL) values (6,2,'JapaneseDumpling','Good food!',6.99,0);
+insert into menudish(id,cheif_id,dishname,dishdesc,price,SPECIAL) values (9,2,'Tonkotsu','Good food!',8.99,0);
+insert into menudish(id,cheif_id,dishname,dishdesc,price,SPECIAL) values (10,2,'Yakitori','Good food!',9.99,0);
+
+insert into menudish(id,cheif_id,dishname,dishdesc,price,SPECIAL) values (11,1,'TonkotsuRamen','Good food!',12.99,1);
+insert into menudish(id,cheif_id,dishname,dishdesc,price,SPECIAL) values (12,2,'FiredDumpling','Good food!',12.99,1);
+
+UPDATE menudish SET dishimage = 'AburiZushi.jpg' WHERE id = 5;
+UPDATE menudish SET dishimage = 'Dorayaki.jpg' WHERE id = 7;
+UPDATE menudish SET dishimage = 'FiredDumpling.jpg' WHERE id = 12;
+UPDATE menudish SET dishimage = 'Nigirizushi.jpg' WHERE id = 2;
+UPDATE menudish SET dishimage = 'Tamagoyaki.jpg' WHERE id = 3;
+UPDATE menudish SET dishimage = 'Teppanyaki.jpg' WHERE id = 8;
+UPDATE menudish SET dishimage = 'JapaneseDumpling.jpg' WHERE id = 6;
+UPDATE menudish SET dishimage = 'Tonkotsu.jpg' WHERE id = 9;
+UPDATE menudish SET dishimage = 'TonkotsuRamen.jpg' WHERE id = 11;
+UPDATE menudish SET dishimage = 'Unadon.jpg' WHERE id = 4;
+UPDATE menudish SET dishimage = 'Yakitori.jpg' WHERE id = 10;
+UPDATE menudish SET dishimage = 'Yoshinoya.jpg' WHERE id = 1;
 	
+	
+
+
 
 	
 
@@ -241,23 +232,6 @@ CREATE TABLE vipdish(
 
 insert into cheif (cheif_id,name)VALUES(1,'cheif1');
 insert into cheif (cheif_id,name)VALUES(2,'cheif2');
-
-insert into popdish(id,cheif_id,dishname,dishdesc,price) values (1,1,'Yoshinoya beef bowl','Good food!',10.99);
-insert into popdish(id,cheif_id,dishname,dishdesc,price) values (2,1,'Nigirizushi','Good food!',12.99);
-insert into popdish(id,cheif_id,dishname,dishdesc,price) values (3,1,'Tamagoyaki','Good food!',14.99);
-insert into popdish(id,cheif_id,dishname,dishdesc,price) values (7,1,'Dorayaki','Good food!',7.99);
-insert into popdish(id,cheif_id,dishname,dishdesc,price) values (8,1,'Teppanyaki','Good food!',12.99);
-
-insert into cultdish(id,cheif_id,dishname,dishdesc,price) values (4,2,'Unadon','Good food!',11.99);
-insert into cultdish(id,cheif_id,dishname,dishdesc,price) values (5,2,'AburiZushi','Good food!',9.99);
-insert into cultdish(id,cheif_id,dishname,dishdesc,price) values (6,2,'JapaneseDumpling','Good food!',6.99);
-insert into cultdish(id,cheif_id,dishname,dishdesc,price) values (9,2,'Tonkotsu','Good food!',8.99);
-insert into cultdish(id,cheif_id,dishname,dishdesc,price) values (10,2,'Yakitori','Good food!',9.99);
-
-insert into vipdish(id,cheif_id,dishname,dishdesc,price) values (11,1,'Tonkotsu Ramen','Good food!',12.99);
-insert into vipdish(id,cheif_id,dishname,dishdesc,price) values (12,2,'FiredDumpling','Good food!',12.99);
-
-
 
 INSERT INTO deliveryMen(delivery_id,name) VALUES (1,"dilivery1");
 INSERT INTO deliveryMen(delivery_id,name) VALUES (2,"dilivery2");
