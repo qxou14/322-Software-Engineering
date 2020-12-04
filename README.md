@@ -19,5 +19,9 @@ Visual Studio Code steps:
 <br>
 2.Clone all the source code and put them inside this folder.
 
+<br>
+
+Contributors: QianXing Ou ,  Alice Maharjan, TianLang Huang, DongXin Liang ,  KaiMing Wei
+
 
 
