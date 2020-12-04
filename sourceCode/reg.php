@@ -58,7 +58,11 @@ if($Password == $check_P && $lenUser && $lenName && $lenPass && $lenEmail && $le
 {
     echo "Congrats ! You have been registered!";
     $sqlStatement = "INSERT INTO info (username,FullName,pwd,email,addr,phoneNumber,saving,warning,level) VALUES ('$Username','$Fullname','$Password','$Email','$Addr','$Phone',0,0,0);" ;
+    $maketable = "CREATE TABLE $Username (username VARCHAR(20) DEFAULT '$Username' ,dishid INT,dishname VARCHAR(155),dishdesc VARCHAR(155),nooforder INT DEFAULT 0,totalorder INT DEFAULT 0,rating int DEFAULT 0,dishimage varchar(255),SPECIAL int);";
+    mysqli_query($conn,$maketable);
     mysqli_query($conn,$sqlStatement);
+    $adddish =  "INSERT INTO $Username (dishid,dishname,dishdesc,totalorder,rating,dishimage,SPECIAL) SELECT id,dishname,dishdesc,dishtotalorder,dishrating,dishimage,SPECIAL FROM menudish;";
+    mysqli_query($conn,$adddish);
 }
 else if($Username == "")
 {
