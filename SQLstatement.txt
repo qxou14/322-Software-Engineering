@@ -62,7 +62,7 @@ create table info(
 
 	create table dishes(
 
-		cheif_id int,
+		cheif_id int check (cheif_id in(1,2)),
 
 	    dish_id int primary key,
 
@@ -72,9 +72,9 @@ create table info(
 
 	    rateTime int default 0, #number of rating, will use that for rating 
 
-	    description varchar(255),
+	    description varchar(255)
 
-	    FOREIGN KEY(cheif_id) REFERENCES cheif(cheif_id)
+	    
 
 	    
 
@@ -97,7 +97,7 @@ noofrating int DEFAULT 0
 Create table deliveryOrder(
 
 	number int AUTO_INCREMENT PRIMARY KEY,
-    	delivery_id int,
+    	delivery_id int check (delivery_id in(1,2)),
 	deliveryName VARCHAR(20), #name of deliveryman
 	foodName VARCHAR(20),  #name of dish
 	quantity int, #number of items
@@ -107,8 +107,8 @@ Create table deliveryOrder(
     	addr VARCHAR(50),
 	phone varchar(20),
     	additionTime TIMESTAMP DEFAULT CURRENT_TIMESTAMP(),
-	deliveryStatus VARCHAR(10) DEFAULT "no",
-    	FOREIGN KEY(delivery_id) REFERENCES deliverymen(delivery_id)  
+	deliveryStatus VARCHAR(10) DEFAULT "no"
+    	 
 );
 
 
@@ -149,7 +149,7 @@ create table deliverySelected(
 
 	    situation int DEFAULT 0, #if situation >=3 this means this cheif will be promoted <=3 will be demoted
 
-	    FOREIGN KEY(dish_id) REFERENCES dishes(dish_id)
+	   
 
 	);
 
@@ -159,7 +159,7 @@ CREATE TABLE menudish(
 
 		id int PRIMARY KEY,
 
-		cheif_id int,
+		cheif_id int check (cheif_id in(1,2)),
 
 		dishname varchar(255),
 
@@ -177,7 +177,7 @@ CREATE TABLE menudish(
 
 		SPECIAL int,
 
-		FOREIGN KEY(cheif_id) REFERENCES cheif(cheif_id)
+		
 
 	);
 	
