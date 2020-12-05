@@ -106,6 +106,9 @@
                                         $price = $quantity * $foodprice;
                                         $sql = "INSERT INTO ordering (username,dish_name,quantity,price,chef_id,dish_id) VALUES ('$username','$dishname',$quantity,$price,'$chefid',$dishid);" ;
                                         mysqli_query($conn,$sql);
+
+                                        $sql1 = "UPDATE info SET Spend = Spend+$price , TotalOrder = TotalOrder+$quantity WHERE username = '$username'";
+                                        mysqli_query($conn,$sql1);
                                     }
                             
                                 
@@ -175,6 +178,8 @@
                                             $price = $quantity * $foodprice;
                                             $sql = "INSERT INTO ordering (username,dish_name,quantity,price,chef_id,dish_id) VALUES ('$username','$dishname',$quantity,$price,'$chefid',$dishid);" ;
                                             mysqli_query($conn,$sql);
+                                            $sql1 = "UPDATE info SET Spend = Spend+$price , TotalOrder = TotalOrder+$quantity WHERE username = '$username'";
+                                            mysqli_query($conn,$sql1);
                                         }
                                 
                                     

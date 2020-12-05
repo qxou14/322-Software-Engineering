@@ -162,7 +162,7 @@
     <form action = "deregister.php" method = "POST">
                 Remove:<input type= "text" name="username21">
                 <br>
-                <button type = "submit" name = "submit">Remove!</button>
+                <button type = "submit" name = "submit">Remove Username!</button>
                 <br>             
     </form>
 </div>
