@@ -3,7 +3,7 @@ In this project, we are asked to develop an on-line restraurant order and delive
 
 In order to access this project, we need to download xampp for our database and visual studio code for our source code.
 <br>
-In order to use the cheif,admin and delivery man features, please use the accounts and password that I created inside the txt named "322 Givenaccount".
+In order to use the chef,admin and delivery man features, please use the accounts and password that I created inside the txt named "322 Givenaccount".
 <br>
 Also, remember to insert the data inside the appointment relation by using the insert statements I provided in the SQLstatement.txt
 
