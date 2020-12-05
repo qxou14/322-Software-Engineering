@@ -106,8 +106,139 @@
      }
      ?>
 
-
-
+<form action = "adminComplaint.php" method = "POST">
+        <label>Compliment Chef:</label>
+        <br>
+        <tr><td> name of chef :</td><td> <input type="text"  name="Ccompliment" placeholder="Username of Chef "></td></tr>
+        
+        <button type = "submit" name = "submit">Done!</button>
+</form>
+<?php 
+     
+ 
+     if(isset($_POST['Ccompliment']))
+     {
+    
+      
+         $C =$_POST['Ccompliment'];
+         
+      
+         if(isset($C) )
+         {
+ 
+             $sql5 = "UPDATE cheif SET compliment = compliment +1 WHERE name = '$C'";
+             mysqli_query($conn,$sql5);
+             $sql5 = "UPDATE cheif SET situation = compliment - complain WHERE name = '$C'";
+             mysqli_query($conn,$sql5);
+             
+         }
+         else
+         {
+             echo " Please enter a valid username";
+         }
+       
+     }
+     ?>
+<form action = "adminComplaint.php" method = "POST">
+        <label>Complain Chef:</label>
+        <br>
+        <tr><td> name of chef :</td><td> <input type="text"  name="Ccomplain" placeholder="Username of Chef "></td></tr>
+        
+        <button type = "submit" name = "submit">Done!</button>
+</form>
+<?php 
+     
+ 
+     if(isset($_POST['Ccomplain']))
+     {
+    
+      
+         $C =$_POST['Ccomplain'];
+         
+      
+         if(isset($C) )
+         {
+ 
+             $sql5 = "UPDATE cheif SET complain = complain +1 WHERE name = '$C'";
+             mysqli_query($conn,$sql5);
+             $sql5 = "UPDATE cheif SET situation = compliment - complain WHERE name = '$C'";
+             mysqli_query($conn,$sql5);
+ 
+             
+         }
+         else
+         {
+             echo " Please enter a valid username";
+         }
+       
+     }
+     ?>
+<form action = "adminComplaint.php" method = "POST">
+        <label>Compliment Deliveryguy:</label>
+        <br>
+        <tr><td> name of Delivery Guy :</td><td> <input type="text"  name="Dcompliment" placeholder="Username of DeliveryGuy "></td></tr>
+        
+        <button type = "submit" name = "submit">Done!</button>
+</form>
+<?php 
+     
+ 
+     if(isset($_POST['Dcompliment']))
+     {
+    
+      
+         $C =$_POST['Dcompliment'];
+         
+      
+         if(isset($C) )
+         {
+ 
+             $sql5 = "UPDATE deliverymen SET compliment = compliment +1 WHERE name = '$C'";
+             mysqli_query($conn,$sql5);
+             $sql5 = "UPDATE deliverymen SET situation = compliment - complain WHERE name = '$C'";
+             mysqli_query($conn,$sql5);
+             
+         }
+         else
+         {
+             echo " Please enter a valid username";
+         }
+       
+     }
+     ?>
+<form action = "adminComplaint.php" method = "POST">
+        <label>Complain Deliveryguy:</label>
+        <br>
+        <tr><td> name of Delivery Guy :</td><td> <input type="text"  name="Dcomplain" placeholder="Username of DeliveryGuy "></td></tr>
+        
+        <button type = "submit" name = "submit">Done!</button>
+</form>
+<?php 
+     
+ 
+     if(isset($_POST['Dcomplain']))
+     {
+    
+      
+         $C =$_POST['Dcomplain'];
+         
+      
+         if(isset($C) )
+         {
+ 
+             $sql5 = "UPDATE deliverymen SET complain = complain +1 WHERE name = '$C'";
+             mysqli_query($conn,$sql5);
+             $sql5 = "UPDATE deliverymen SET situation = compliment - complain WHERE name = '$C'";
+             mysqli_query($conn,$sql5);
+             
+         }
+         else
+         {
+             echo " Please enter a valid username";
+         }
+       
+     }
+     ?>
 
 
 

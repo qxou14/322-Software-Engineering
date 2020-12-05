@@ -15,8 +15,8 @@
 
 <div class = "logos">
     <u1> 
-        <li><a href = ""> Demote</a></li>
-        <li><a href = ""> Fire </a></li>
+        <li><a href = "demote.php"> Demote</a></li>
+        <li><a href = "fire.php"> Fire </a></li>
         <li><a href = "deregister.php"> de-register </a></li>
         <li><a href = "takeList.php"> Take-out List </a></li>
         <li><a href = "deliveryList.php"> Delivery List </a></li>

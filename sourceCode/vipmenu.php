@@ -27,7 +27,7 @@
     <span><a href = "deposit.php"> Deposit</a></span>
     <span><a href = "cancelAccount.php"> Cancellation</a></span>
     <span><a href = "Recommended.php"> Recommended</a></span>
-    <span><a href = "vipRating.php"> Rating</a></span>
+    <span><a href = "vipRatetoggle.php"> Rating</a></span>
     <span><a href = "logout.php"> Log out</a></span>
 </div>
 </head>

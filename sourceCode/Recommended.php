@@ -25,7 +25,7 @@
     <span><a href = "customerComplaint.php">Complain</a></span>
     <span><a href = "deposit.php"> Deposit</a></span>
     <span><a href = "cancelAccount.php"> Cancellation</a></span>
-    <span><a href = "Rating.php"> Rate our Dish</a></span>
+    <span><a href = "Ratetoggle.php"> Rate us</a></span>
     <span><a href = "logout.php"> Log out</a></span>
 </div>
 </head>
