@@ -215,6 +215,7 @@ UPDATE menudish SET dishimage = 'Yoshinoya.jpg' WHERE id = 1;
 
 	
 
+
 	create table Ordering(
 
 	    orders int AUTO_INCREMENT PRIMARY KEY,
@@ -227,7 +228,11 @@ UPDATE menudish SET dishimage = 'Yoshinoya.jpg' WHERE id = 1;
 
 	    price float,
 
-	    special int  #1 is for vip
+	    special int,  #1 is for vip
+        
+            chef_id int,
+        
+            dish_id int
 
 	
 
