@@ -89,7 +89,8 @@ create table info(
     salary float DEFAULT 2500,
     demoted int DEFAULT 0, #if demoted >1 add salaray  if demoted = -1 reduce salary if demoted = -2->fire
     situation int DEFAULT 0, #if situation >=3 this means this  deliveryMan will be promoted <=3 will be demoted
-rating int DEFAULT 0
+rating int DEFAULT 0,
+noofrating int DEFAULT 0
 );
 
 
