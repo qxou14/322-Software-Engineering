@@ -22,17 +22,17 @@
 <div class = "introduction"> The Online Restaurant </div>
 <div class = "look">
 <span><a href="vipafterlogin.php"> Order </a></span>
-    <span><a href = "zDinein.php">Dine in </a></span>
-    <span><a href = "customerComplaint.php">Complain</a></span>
+    <span><a href = "vipzDinein.php">Dine in </a></span>
+    <span><a href = "vipcustomerComplaint.php">Complain</a></span>
     <span><a href = "deposit.php"> Deposit</a></span>
     <span><a href = "cancelAccount.php"> Cancellation</a></span>
-    <span><a href = "Recommended.php"> Recommended</a></span>
+    <span><a href = "vipRecommended.php"> Recommended</a></span>
     <span><a href = "vipRatetoggle.php"> Rating</a></span>
     <span><a href = "logout.php"> Log out</a></span>
 </div>
 </head>
 <body>
-<h3><i>Welcome User: <?php echo $_SESSION['username']; ?> <i></h3>
+<h3><i>Welcome VIP User: <?php echo $_SESSION['username']; ?> <i></h3>
 
 <?php 
     $username = $_SESSION['username'];

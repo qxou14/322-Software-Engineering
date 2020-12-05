@@ -4,7 +4,7 @@
     include "database.php"; 
 ?>
 
-<a href="afterlogin.php"> <b>return<b> </a>
+
 <link rel = "stylesheet" type = "text/css" href ="style.css">
 
 <form action = "deposit.php" method = "POST">
