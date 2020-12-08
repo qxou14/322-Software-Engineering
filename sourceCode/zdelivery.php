@@ -8,8 +8,23 @@
     
 ?>
 <link rel = "stylesheet" type = "text/css" href ="style.css">
+<link rel = "stylesheet" type = "text/css" href ="zTakeout.css">
+<link rel = "stylesheet" type = "text/css" href ="background_color.css">
+<style>
+    
+    a:hover {
+    color: #f60;
+    text-decoration: underline;
+    }
+    p{
+        margin-top: 0px;
+        text-align: center;
+    }
+</style>
 
-<div class = "introduction"> The Online Restaurant </div>
+</head>
+<body>
+<div class = "introduction"> K's Cafe </div>
 <div class = "look">
     <span><a href="afterlogin.php"> Order </a></span>
     <span><a href = "">Complain</a></span>
@@ -17,8 +32,6 @@
     <span><a href = "cancelAccount.php"> Cancellation</a></span>
     <span><a href = "logout.php"> Log out</a></span>
 </div>
-</head>
-<body>
 <span><a href = "pickmethod.php" style = "color:blue"> Go back </a><span>
 <h3><i>Welcome User: <?php echo $_SESSION['username']; ?> <i></h3>
 
@@ -26,7 +39,7 @@
 <p> Pick a delivery man! </p>
 
 
-<table>
+<table class="table">
 
         <caption> List of Deliverymen</caption>
                 <tr=> 
@@ -190,7 +203,7 @@
 </table>
 
 
-<table>
+<table class="table">
 
 <caption>History</caption>
         <tr=>
@@ -249,9 +262,12 @@
 
 
 <form action = "zdelivery.php" method = "POST"> 
-
-            <button type ="submit" name = "delivery1" value = 1> Pick first deliveryman </button>
-            <button type ="submit" name = "delivery2" value = 2> Pick second deliveryman </button>
+            <div class="d1">
+                <button type ="submit" name = "delivery1" value = 1> Pick first deliveryman </button>
+            </div>
+            <div class="d2">
+                <button type ="submit" name = "delivery2" value = 2> Pick second deliveryman </button>
+            </div>
 
 </form>
 

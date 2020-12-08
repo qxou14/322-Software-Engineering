@@ -9,7 +9,7 @@
 
 <div class="box">
 <div class="return">
-    <a href="afterlogin.php">Click to return to the previous page </a>
+    <a href="vipafterlogin.php">Click to return to the previous page </a>
 </div>
 
 <div class="deposit">

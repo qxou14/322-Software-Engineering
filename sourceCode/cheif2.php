@@ -1,4 +1,22 @@
 <link rel = "stylesheet" type = "text/css" href ="style.css">
+<link rel = "stylesheet" type = "text/css" href ="demote.css">
+<link rel = "stylesheet" type = "text/css" href ="background_color.css">
+<style>
+    a:hover {
+        color: #f60;
+        text-decoration: underline;
+    }
+    .row{
+        width: 80px;
+    }
+    body{
+    height: 1700px;
+    }
+    textarea{
+    height: 200px;
+    width: 400px;
+    }
+</style>
 <?php  
     
     include_once "database.php";
@@ -8,12 +26,15 @@
 ?>
 
 
-<div class = "introduction"> The Online Restaurant </div>
+<div class="return">
+    <a href="cheifmeun.php">Click to return to the previous page </a>
+</div>
+<div class = "introduction"> K's Cafe </div>
 
 <h3><i>Welcome  User: <?php echo $_SESSION['username']; ?> <i></h3>
-<a href="cheifmeun.php"> <b>return<b> </a>
 
-<table>
+<div class="table">
+    <table class="employee">
         <caption>Cultural Menu</caption>
             <tr=> 
                 <th>Dish Name</th>  
@@ -84,16 +105,17 @@
                 }
             ?>
     </table>
+    
 
     <form action = "cheif2.php" method = "Post">
 
-                <label>row</label>
-                <input type = "number" name = "row" min = 1 max = 3 placeholder = "1 to 3 ">
+                <h3 class="text">row</h3>
+                <input class="row" type = "number" name = "row" min = 1 max = 3 placeholder = "1 to 3 ">
                 <br>
-                <label>New Name:</label>
+                <h3 class="header3">New Name</h3>
                 <input type = "text" name = "Nname">
                 <br>
-                <button type = "submit" name = "submit">Change New Name </button>
+                <button class="sub-butt" type = "submit" name = "submit">Change New Name </button>
                 <br>
 
     </form>
@@ -101,40 +123,39 @@
 
     <form action = "cheif2.php" method = "Post">
 
-                <label>row</label>
-                <input type = "number" name = "row1" min = 1 max = 3 placeholder = "1 to 3 ">
+                <h3 class="text">row</h3>
+                <input class="row" type = "number" name = "row1" min = 1 max = 3 placeholder = "1 to 3 ">
                 <br>
-                <label>New Description:</label>
+                <h3>New Description</h3>
                 <input type = "text" name = "Ndesc">
                 <br>
-                <button type = "submit" name = "submit">Change New Desc </button>
+                <button class="sub-butt" type = "submit" name = "submit">Change New Desc </button>
                 <br>
 
     </form>
 
     <form action = "cheif2.php" method = "Post">
 
-                <label>row</label>
-                <input type = "number" name = "row2" min = 1 max = 3 placeholder = "1 to 3 ">
+                <h3 class="text">row</h3>
+                <input class="row" type = "number" name = "row2" min = 1 max = 3 placeholder = "1 to 3 ">
                 <br>
-                <label>New Price:</label>
+                <h3>New Price</h3>
                 <input type = "number" min = 0 step = 0.01 name = "Nprice">
                 <br>
-                <button type = "submit" name = "submit">Change New Price </button>
+                <button class="sub-butt" type = "submit" name = "submit">Change New Price </button>
                 <br>
 
     </form>
 
 
-    <h1>Customer complaint/compliment </h1>
-    
-    <table border="0" cellpadding="0" cellspacing="0">
-                <tr bgcolor="#f87820">
+    <h2>Customer complaint/compliment </h2>
+    <div class="table">
+    <table class="employee" border="0" cellpadding="0" cellspacing="0">
+                <tr>
                     <td class=tabhead><img src="img/blank.gif" alt="" width="400" height="6"><br><b>Person Who complains/compliments</b></td>
                     <td class=tabhead><img src="img/blank.gif" alt="" width="400" height="6"><br><b>Complained/Complimented person</b></td>
                     <td class=tabhead><img src="img/blank.gif" alt="" width="400" height="6"><br><b>Compliant/Compliment</b></td>
                     <td class=tabhead><img src="img/blank.gif" alt="" width="400" height="6"><br><b>Dispute</b></td>
-                    <td><img src="img/blank.gif" alt="" width="10" height="25"></td>
                 </tr>
     
     <?php
@@ -158,14 +179,23 @@
     
     ?>
       </table>
+      </div>
     
       <form action = "cheif2.php" method = "POST">
-            <label>write down your response to the complaint/compliment:</label>
-            <textarea name="dispute" placeholder="Write down your response"></textarea> 
+            <h3>
+            write down your response to the complaint/compliment
+          </h3>
+          <textarea name="dispute" placeholder="Write down your response"></textarea> 
+          <h3>
+            Your username
+          </h3>
+          <input type="text"  name="BCP" placeholder="Input your username">
+          <h3>
+            Username of customer who complained you
+          </h3>
+            <input type="text"  name="CP" placeholder="Username">
             <br>
-            <tr><td>Your username:</td><td> <input type="text"  name="BCP" placeholder="Input your username"></td></tr>
-            <tr><td>Username of customer who complained you:</td><td> <input type="text"  name="CP" placeholder="Username of person who complained you"></td></tr>
-            <button type = "submit" name = "submit">Done!</button>
+            <button class="sub-butt" type = "submit" name = "submit">Done!</button>
     </form>
 
     <?php 
@@ -196,6 +226,8 @@
        
      }
      ?>
+
+</div>
 
 
 

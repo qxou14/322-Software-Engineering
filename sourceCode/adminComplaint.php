@@ -3,16 +3,39 @@
     include "database.php"; 
     include "functions.php";
 ?>
-<a href="adminUser.php"> <b>return<b> </a>
-<link rel = "stylesheet" type = "text/css" href ="style.css">
 
-<table border="0" cellpadding="0" cellspacing="0">
-            <tr bgcolor="#f87820">
+<link rel = "stylesheet" type = "text/css" href ="style.css">
+<link rel = "stylesheet" type = "text/css" href ="adminComplaint.css">
+<link rel = "stylesheet" type = "text/css" href ="background_color.css">
+<style>
+    a:hover {
+        color: #f60;
+        text-decoration: underline;
+    }
+    body{
+    height: 1800px;
+    width: 100%;
+    background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    background-size: contain;
+}
+</style>
+
+
+<div class="return">
+    <a href="adminUser.php">Click to return to the previous page </a>
+</div>
+<div class = "introduction"> K's Cafe </div>
+
+
+<div class="table">
+
+<table class="table" border="0" cellpadding="0" cellspacing="0">
+        <caption>Complains List</caption>
+            <tr >
                 <td class=tabhead><img src="img/blank.gif" alt="" width="400" height="6"><br><b>Person Who complains/compliments</b></td>
                 <td class=tabhead><img src="img/blank.gif" alt="" width="400" height="6"><br><b>Complained/Complimented person</b></td>
                 <td class=tabhead><img src="img/blank.gif" alt="" width="400" height="6"><br><b>Compliant/Compliment</b></td>
                 <td class=tabhead><img src="img/blank.gif" alt="" width="400" height="6"><br><b>Dispute</b></td>
-                <td><img src="img/blank.gif" alt="" width="10" height="25"></td>
             </tr>
 
 <?php
@@ -36,13 +59,27 @@
 
 ?>
   </table>
+  </div>
 
   <form action = "adminComplaint.php" method = "POST">
-        <label>remove the row:</label>
-        <br>
-        <tr><td>Username of person who complained/complimented:</td><td> <input type="text"  name="UP" placeholder="Username of person who complained "></td></tr>
-        <tr><td>Username of complained/complimented person:</td><td> <input type="text"  name="UC" ></td></tr>
+      <h3 class="header3">
+          To dispute a complain
+      </h3>
+      <h4 class="header4">
+        Username of person who gave the complain/compliment
+      </h4>
+      <div class="user-input">
+        <input type="text"  name="UP" placeholder="Username">
+      </div>
+      <h4 class="header4">
+        Username of person who received complain/compliment
+      </h4>
+      <div class="user-input">
+        <input type="text"  name="UC" placeholder="Username">
+      </div>
+      <div class="sub-butt">
         <button type = "submit" name = "submit">Done!</button>
+      </div>
 </form>
 
 <?php 
@@ -73,11 +110,18 @@
 
 
 <form action = "adminComplaint.php" method = "POST">
-        <label>give a warning to a customer:</label>
-        <br>
-        <tr><td>Username of customer :</td><td> <input type="text"  name="WC" placeholder="Username of customer "></td></tr>
-        
+        <h3 class="header3">
+            give a warning to a customer
+        </h3>
+        <h4 class="header4">
+        Username of customer
+        </h4>
+        <div class="user-input">
+        <input type="text"  name="WC" placeholder="Username">
+        </div>
+        <div class="sub-butt">
         <button type = "submit" name = "submit">Done!</button>
+        </div>
 </form>
 
 <?php 
@@ -107,11 +151,20 @@
      ?>
 
 <form action = "adminComplaint.php" method = "POST">
-        <label>Compliment Chef:</label>
-        <br>
-        <tr><td> name of chef :</td><td> <input type="text"  name="Ccompliment" placeholder="Username of Chef "></td></tr>
-        
-        <button type = "submit" name = "submit">Done!</button>
+            <h3 class="header3">
+            Compliment Chef
+            </h3>
+            <h4 class="header4">
+            name of chef
+            </h4>
+            <div class="user-input">
+            <input type="text"  name="Ccompliment" placeholder="Username of Chef ">
+            </div>
+            <div class="sub-butt">
+            <button type = "submit" name = "submit">Done!</button>
+            </div>
+
+
 </form>
 <?php 
      
@@ -140,11 +193,19 @@
      }
      ?>
 <form action = "adminComplaint.php" method = "POST">
-        <label>Complain Chef:</label>
-        <br>
-        <tr><td> name of chef :</td><td> <input type="text"  name="Ccomplain" placeholder="Username of Chef "></td></tr>
-        
+        <h3 class="header3">
+        Complain Chef   
+        </h3>
+        <h4 class="header4">
+         Username of the chef
+        </h4>
+        <div class="user-input">
+        <input type="text"  name="Ccomplain" placeholder="Username of Chef ">
+        </div>
+        <div class="sub-butt">
         <button type = "submit" name = "submit">Done!</button>
+        </div>
+
 </form>
 <?php 
      
@@ -174,11 +235,18 @@
      }
      ?>
 <form action = "adminComplaint.php" method = "POST">
-        <label>Compliment Deliveryguy:</label>
-        <br>
-        <tr><td> name of Delivery Guy :</td><td> <input type="text"  name="Dcompliment" placeholder="Username of DeliveryGuy "></td></tr>
-        
+        <h3 class="header3">
+            Compliment Deliveryguy
+        </h3>
+        <h4 class="header4">
+            Username of the Delivery Guy
+        </h4>
+        <div class="user-input">
+        <input type="text"  name="Dcompliment" placeholder="Username of the DeliveryGuy ">
+        </div>
+        <div class="sub-butt">
         <button type = "submit" name = "submit">Done!</button>
+        </div>
 </form>
 <?php 
      
@@ -207,11 +275,18 @@
      }
      ?>
 <form action = "adminComplaint.php" method = "POST">
-        <label>Complain Deliveryguy:</label>
-        <br>
-        <tr><td> name of Delivery Guy :</td><td> <input type="text"  name="Dcomplain" placeholder="Username of DeliveryGuy "></td></tr>
-        
+        <h3 class="header3">
+            Complain Deliveryguy
+        </h3>
+        <h4 class="header4">
+            Username of the Delivery Guy
+        </h4>
+        <div class="user-input">
+        <input type="text"  name="Dcomplain" placeholder="Username of DeliveryGuy ">
+        </div>
+        <div class="sub-butt">
         <button type = "submit" name = "submit">Done!</button>
+        </div>
 </form>
 <?php 
      
@@ -241,11 +316,12 @@
      ?>
 
 
+<div class="table">
 
-<table border="0" cellpadding="0" cellspacing="0">
-            <tr bgcolor="#f87820">
+
+<table class="table"  border="0" cellpadding="0" cellspacing="0">
+            <tr >
                 <td class=tabhead><img src="img/blank.gif" alt="" width="400" height="6"><br><b>List of taboo words</b></td>
-                <td><img src="img/blank.gif" alt="" width="10" height="25"></td>
             </tr>
 
 <?php
@@ -262,5 +338,6 @@
   
 ?>
   </table>
+  </div>
 
   

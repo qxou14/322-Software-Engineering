@@ -1,37 +1,61 @@
 <?php  
     include_once 'database.php'; 
-    include('header.html')
     
 ?>
-
-<link rel = "stylesheet" type = "text/css" href ="style.css">
-
-<br>
-<hr>
-
-
-<div class = "login_info">
-    <form action = "reg.php" method = "POST">
-        Username:<input type= "text" name="username" placeholder = "at least 4 characters">
-        <br>
-        Fullname:<input type= "text" name="fullname" placeholder = "Enter your Full name">
-        <br>
-        Password:<input type= "password"  name="password" placeholder = "At least 8 letters/numbers">
-        <br>
-        Comfirmed Password:<input type= "password"  name="cpassword" placeholder = " same as password">
-        <br>
-        Email:<input type= "email" name="email" placeholder="xxx@gmail.com">
-        <br>
-        Address: <input type="text" name="address" placeholder ="Wrong = delayed order">
-        <br>
-        Phone: <input type= "text" name="phone" placeholder = "ex:123456789">
-        <br>
-        <button type = "submit" name = "submit">Sign up </button>
-        <br>
-        
-    </form>
-
-<div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="login_header.css">
+    <link rel="stylesheet" href="reg.css">
+    <style>
+        .message{
+            text-align: center;
+            font-size: 20px;
+            color: #EFF0F1;
+        }
+        body{
+            height: 100%;
+            width: 100%;
+            background-image: linear-gradient(to right, #434343 0%, black 100%);
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div class="store-name">
+            <h2>K's Cafe</h2>
+        </div>
+        <div class="user">
+            <a class="a1" href="index.php">Home</a>
+            <a class="a2" href="AboutUs.html">About us</a>
+            <a class="a4" href="Contact.html">Contact us</a>
+        </div>
+        <div class="sign-up">
+            <form action = "reg.php" method = "POST">
+                <h3>Username:</h3>
+                <input type= "text" name="username" placeholder = "at least 4 characters">
+                <h3>Fullname:</h3>
+                <input type= "text" name="fullname" placeholder = "Enter your Full name">
+                <h3>Password:</h3>
+                <input type= "password"  name="password" placeholder = "At least 8 letters/numbers">
+                <h3>Comfirmed Password:</h3>
+                <input type= "password"  name="cpassword" placeholder = "Input your password again">
+                <h3>Email:</h3>
+                <input type= "email" name="email" placeholder="xxx@gmail.com">
+                <h3>Address:</h3>
+                <input type="text" name="address" placeholder ="The place we deliver your order">
+                <h3>PhoneNumber:</h3>
+                <input type= "text" name="phone" placeholder = "ex:123456789">
+                <div class="submit-button">
+                    <button type = "submit" name = "submit">Sign up </button>
+                </div>
+            </form>
+        </div>
+    
 
 
 <?php
@@ -56,7 +80,7 @@
 
 if($Password == $check_P && $lenUser && $lenName && $lenPass && $lenEmail && $lenAddr && $is_phone)
 {
-    echo "Congrats ! You have been registered!";
+    echo '<div class="message">Congrats! You have been registered!</div>';
     $sqlStatement = "INSERT INTO info (username,FullName,pwd,email,addr,phoneNumber,saving,warning,level) VALUES ('$Username','$Fullname','$Password','$Email','$Addr','$Phone',0,0,0);" ;
     $maketable = "CREATE TABLE $Username (username VARCHAR(20) DEFAULT '$Username' ,dishid INT,dishname VARCHAR(155),dishdesc VARCHAR(155),nooforder INT DEFAULT 0,totalorder INT DEFAULT 0,rating int DEFAULT 0,dishimage varchar(255),SPECIAL int);";
     mysqli_query($conn,$maketable);
@@ -66,35 +90,37 @@ if($Password == $check_P && $lenUser && $lenName && $lenPass && $lenEmail && $le
 }
 else if($Username == "")
 {
-    echo "Welcome!";
+    echo '<div class="message">Welcome!</div>';
 }
 else if ($Password !=$check_P ){
-    echo "Please re-enter your password";
+    echo '<div class="message">Please re-enter your password</div>';
 }
 else if(!$lenUser)
 {
-    echo "Please re-enter your username!";
+    echo '<div class="message">Please re-enter your username</div>';
 }
 else if(!$lenName)
 {
-    echo "Please enter your name!";
+    echo '<div class="message">Please enter your name</div>';
 }
 else if(!$lenPass)
 {
-    echo "Your password do not meet the requirement.";
+    echo '<div class="message">Your password do not meet the requirement</div>';
 }
 else if(!$lenEmail)
 {
-    echo "Please enter a valid email";
+    
+    echo '<div class="message">Please enter a valid email</div>';
 }
 else if(!$lenAddr)
 {
-    echo "Please enter your address";
+    echo '<div class="message">Please enter your address</div>';
 }
 else if (!$is_phone){
-    echo "Please enter a valid phone";
+    echo '<div class="message">Please enter a valid phone</div>';
 }
 
-
 ?>
-
+</div>
+</body>
+</html>

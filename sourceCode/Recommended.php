@@ -17,8 +17,13 @@
 
 <link rel = "stylesheet" type = "text/css" href ="style.css">
 <link rel = "stylesheet" type = "text/css" href ="menustyle.css">
+<link rel = "stylesheet" type = "text/css" href ="Recommended.css">
 
-<div class = "introduction"> The Online Restaurant </div>
+
+
+</head>
+<body>
+<div class = "introduction"> K's Cafe </div>
 <div class = "look">
     <span><a href="afterlogin.php"> Order </a></span>
     <span><a href = "zDinein.php">Dine in </a></span>
@@ -28,9 +33,7 @@
     <span><a href = "Ratetoggle.php"> Rate us</a></span>
     <span><a href = "logout.php"> Log out</a></span>
 </div>
-</head>
-<body>
-<h3><i>Welcome User: <?php echo $_SESSION['username']; ?> <i></h3>
+<h3 class="User-infor"><i>Welcome User: <?php echo $_SESSION['username']; ?> <i></h3>
 
 <?php 
     $username = $_SESSION['username'];

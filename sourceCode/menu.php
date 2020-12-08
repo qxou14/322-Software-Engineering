@@ -17,8 +17,18 @@
 
 <link rel = "stylesheet" type = "text/css" href ="style.css">
 <link rel = "stylesheet" type = "text/css" href ="menustyle.css">
+<link rel = "stylesheet" type = "text/css" href ="menu.css">
+<style>
+    
+    a:hover {
+    color: #f60;
+    text-decoration: underline;
+  }
+</style>
 
-<div class = "introduction"> The Online Restaurant </div>
+</head>
+<body>
+<div class = "introduction"> K's Cafe </div>
 <div class = "look">
     <span><a href="afterlogin.php"> Order </a></span>
     <span><a href = "zDinein.php">Dine in </a></span>
@@ -29,9 +39,7 @@
     <span><a href = "Ratetoggle.php"> Rate Us</a></span>
     <span><a href = "logout.php"> Log out</a></span>
 </div>
-</head>
-<body>
-<h3><i>Welcome User: <?php echo $_SESSION['username']; ?> <i></h3>
+<h3><i class="infor">Welcome User: <?php echo $_SESSION['username']; ?> <i></h3>
 
 <?php 
     $username = $_SESSION['username'];
@@ -194,9 +202,9 @@
                             }}
                             ?>
                 </div></section>
-
-        <table>
-            <caption>Ordered</caption>
+<div class="table">            
+        <table class="ordered">
+            <caption>Shopping Cart</caption>
                 <tr=>  
                     <th>dish_name</th>
                     <th>quantity</th>
@@ -232,7 +240,7 @@
                  
                 ?>
     </table>
-
+         
     <?php
  
                     $result = $conn -> query("SELECT price FROM Ordering where username = '$username'");
@@ -280,8 +288,9 @@
                 ?>
 
     <form action = 'menu.php' method = 'POST'  >
-                <button type = 'submit' name = 'buy' >Purchased now!</button>
+                <button class="sub-butt" type = 'submit' name = 'buy' >Purchased now!</button>
     </form>
+    </div>  
 
 
 

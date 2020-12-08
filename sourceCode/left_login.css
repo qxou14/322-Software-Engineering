@@ -1,0 +1,116 @@
+body{
+    height: 100%;
+    width: 100%;
+    background-image: url(image/backgroud.jpg);
+    background-size: contain;
+}
+.box{
+    width: 1050px;
+    height: 800px;
+    margin: 100px auto;
+}
+.wrapper-left{
+    display: inline-block;
+    height: 800px;
+    width: 500px;
+    background-image: url(image/Restaurant.jpg);
+}
+
+.wrapper-left .Store-name{
+    font-size: 50px;
+    line-height: 200px;
+    height: 200px;
+    color: whitesmoke;
+    text-align: center;
+}
+
+.wrapper-left .user-login{
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+}
+
+.wrapper-left .user-login h3{
+    font-size: 25px;
+    color: whitesmoke;
+}
+
+.wrapper-left .username{
+    height: 50px;
+}
+
+.wrapper-left .username input{
+    height: 30px;
+    width: 150px;
+    text-align: center;
+    background-color:white;
+    border: none;
+    border-bottom: 1px solid black;
+    border-radius: 20px;
+}
+
+.wrapper-left .username span{
+    margin-left: 155px;
+    color: whitesmoke;
+}
+
+
+.wrapper-left .password{
+    height: 40px;
+}
+
+.wrapper-left .password input{
+    height: 30px;
+    width: 150px;
+    text-align: center;
+    background-color:white;
+    border: none;
+    border-bottom: 1px solid black;
+    border-radius: 20px;
+}
+.wrapper-left .password span{
+    margin-left: 155px;
+    color: whitesmoke;
+}
+
+.wrapper-left .sign-up .user{
+    padding-top: 20px;
+    text-align: center;
+    height: 10px;
+    color: whitesmoke;
+}
+.wrapper-left .sign-up .chief{
+    padding-top: 20px;
+    text-align: center;
+    height: 10px;
+    color: whitesmoke;
+}
+.wrapper-left .sign-up .deliveryman{
+    padding-top: 20px;
+    text-align: center;
+    height: 10px;
+    color: whitesmoke;
+}
+.wrapper-left .sign-up .manager{
+    padding-top: 20px;
+    text-align: center;
+    height: 80px;
+    color: whitesmoke;
+}
+.wrapper-left .sign-up h4 a{
+    color: black;
+}
+
+.wrapper-left .login-icon{
+    height: 100px;
+    padding-left: 215px;
+}
+
+.wrapper-left .login-icon input{
+    height: 40px;
+    width: 70px;
+    border-radius: 20px;
+    background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+}
+
+

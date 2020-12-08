@@ -1,0 +1,39 @@
+#box .text{
+    display: inline-block;
+    height: 800px;
+    width: 40%;
+    margin-top: 50px;
+    margin-left: 40px;
+}
+#box .text h3{
+    font-size: 80px;
+    padding-left: 60px;
+    color: #D6E0E5;
+}
+
+#box .text h3 span{
+    color: #EFF0F1;
+}
+
+#box .text p{
+    width: 80%;
+    margin-top: 50px;
+    padding-left: 60px;
+    color: #D6E0E5;
+    font-size: 20px;
+    line-height: 30px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#box .text .button{
+    margin-top: 80px;
+    padding-left: 60px;
+}
+
+#box .text .button input{
+    height: 50px;
+    width: 200px;
+    border-radius: 30px;
+    color: whitesmoke;
+    background-image: linear-gradient(to right, #434343 0%, black 100%);
+}

@@ -1,0 +1,51 @@
+.box{
+    padding: 0px;
+    margin: 0px;
+    background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.complain{
+    text-align: center;
+}
+.return{
+    text-align: left;
+}
+.user-name{
+    width: 200px;
+    height: 30px;
+}
+.user-input{
+    height: 200px;
+    width: 500px;
+}
+
+.sub-butt{
+    margin-top: 20px;
+}
+
+.dispute{
+    text-align: center;
+}
+
+.complain-table{
+    text-align: center;
+    margin-left: 100px;
+}
+
+::placeholder{
+    padding-left: 3px;
+}
+
+.return{
+    text-align: center;
+}
+a {
+    margin: 0px;
+    color: #464646;
+    text-decoration: none;
+}
+  
+a:hover {
+    color: #f60;
+    text-decoration: underline;
+}

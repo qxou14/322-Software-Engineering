@@ -1,0 +1,31 @@
+#box{
+    position: relative;
+}
+
+#box .image{
+    display: inline-block;
+    width: 800px;
+    height: 536px;
+    overflow: hidden;
+    margin-left: 80px;
+    position: absolute;
+    top: 300px;
+}
+
+#box .image .screen img{
+    float: left;
+}
+
+#box .image .screen{
+    animation-name: image-flow;
+    animation-iteration-count: infinite;
+    animation-duration: 12s;
+}
+
+@keyframes image-flow{
+    0%{}
+    25%{transform: translateY(0px);}
+    50%{transform: translateY(-536px);}
+    75%{transform: translateY(-1072px);}
+    100%{transform: translateY(-1608px);}
+}

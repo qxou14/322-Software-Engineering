@@ -11,14 +11,14 @@
 <div class="box">
 <div class = "introduction"> K's Cafe </div>
 <div class = "look">
-    <span><a href="afterlogin.php"> Order </a></span>
-    <span><a href = "customerComplaint.php">Complain</a></span>
-    <span><a href = "deposit.php"> Deposit</a></span>
-    <span><a href = "cancelAccount.php"> Cancellation</a></span>
+    <span><a href="vipafterlogin.php"> Order </a></span>
+    <span><a href = "vipcustomerComplaint.php">Complain</a></span>
+    <span><a href = "vipdeposit.php"> Deposit</a></span>
+    <span><a href = "vipcancelAccount.php"> Cancellation</a></span>
     <span><a href = "logout.php"> Log out</a></span>
 </div>
 
-<h3><i>Welcome  User: <?php echo $_SESSION['username']; ?> <i></h3>
+<h3><i>Welcome VIP User: <?php echo $_SESSION['username']; ?> <i></h3>
 
 <div class="cancel">
 <form action = "cancelAccount.php" method = "POST">

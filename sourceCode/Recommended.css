@@ -1,0 +1,11 @@
+body{
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+.User-infor{
+    text-align: center;
+}
+i{
+    text-align: center;
+}

@@ -16,9 +16,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link rel = "stylesheet" type = "text/css" href ="style.css">
-<link rel = "stylesheet" type = "text/css" href ="menustyle.css">
+<link rel = "stylesheet" type = "text/css" href ="reset2.css">
+<link rel = "stylesheet" type = "text/css" href ="Ratetoggle.css">
+<link rel = "stylesheet" type = "text/css" href ="background_color.css">
 
-<div class = "introduction"> The Online Restaurant </div>
+
+</head>
+<body>
+<div class="box">
+<div class = "introduction"> K's Cafe </div>
 <div class = "look">
     <span><a href="afterlogin.php"> Order </a></span>
     <span><a href = "zDinein.php">Dine in </a></span>
@@ -29,8 +35,6 @@
     <span><a href = "Ratetoggle.php"> Rate Us</a></span>
     <span><a href = "logout.php"> Log out</a></span>
 </div>
-</head>
-<body>
 <h3><i>Welcome User: <?php echo $_SESSION['username']; ?> <i></h3>
 
 <?php 
@@ -48,8 +52,13 @@
     echo "<h3><i> Money left: {$row['saving']} </i></h3>";
 
 ?>
+<div class="rate">
 <a href = "Ratedish.php"> Rate our Dish</a>
+</div>
+<div class="rate">
 <a href = "Ratedelivery.php"> Rate Our Delivery Guys</a>
+</div>
+</div>
 
 </body>
 </html>

@@ -1,0 +1,42 @@
+.return{
+    text-align: center;
+}
+.return a{
+    margin: 0px;
+    font-size: 14px;
+}
+
+.header3, .header4, .sub-butt{
+    text-align: center;
+}
+
+input{
+    height: 30px;
+    width: 200px;
+}
+
+.user-input{
+    margin-top: -15px;
+    text-align: center;
+}
+
+.sub-butt{
+    margin-top: 5px;
+}
+button{
+    border-radius: 10px;
+    background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.table{
+    text-align: center;
+    margin: 2% auto;
+}
+
+caption{
+    margin-bottom: 3px;
+}
+
+::placeholder{
+    padding-left: 2px;
+}

@@ -1,17 +1,29 @@
 <link rel = "stylesheet" type = "text/css" href ="style.css">
+<link rel = "stylesheet" type = "text/css" href ="demote.css">
+<link rel = "stylesheet" type = "text/css" href ="background_color.css">
+<style>
+    a:hover {
+        color: #f60;
+        text-decoration: underline;
+    }
+</style>
 <?php  
     
     include_once "database.php";
     include_once "functions.php";
     include_once "sectionStart.php";
 ?>
-<span><a href = "adminUser.php"> Go back </a><span>
-<div class = "introduction"> The Online Restaurant </div>
+<div class="return">
+    <a href="adminUser.php">Click to return to the previous page </a>
+</div>
+<div class = "introduction"> K's Cafe </div>
 
 <span><h3><i>Welcome  User: <?php echo $_SESSION['username']; ?> <i></h3><span>
-<h4> Mangers, please remember to clean the appointment list every week</h4>
+<h4 class="message"> Mangers, please remember to clean the appointment list every week</h4>
 
-<table>
+
+<div class="table">
+    <table class="employee">
 
         <caption> Appointments</caption>
                 <tr=> 
@@ -62,7 +74,10 @@
 
 <form action = "appList.php" method ="POST">  
 
-
-            Clean list:<button type ="submit" name = "clean"> Clear </button>
+            <h3 class="text">
+                To Clean list
+            </h3>
+            <button class="sub-butt" type ="submit" name = "clean"> Clear </button>
 
 </form>
+</div>

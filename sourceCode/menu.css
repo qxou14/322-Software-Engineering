@@ -1,0 +1,19 @@
+body{
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.table{
+    text-align: center;
+}
+
+.ordered{
+    margin: 0px auto;
+}
+
+.sub-butt{
+    height: 30px;
+    width: 150px;
+    border-radius: 15px;
+}

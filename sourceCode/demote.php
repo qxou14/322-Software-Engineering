@@ -1,19 +1,28 @@
 <link rel = "stylesheet" type = "text/css" href ="style.css">
+<link rel = "stylesheet" type = "text/css" href ="demote.css">
+<link rel = "stylesheet" type = "text/css" href ="background_color.css">
+<style>
+    a:hover {
+        color: #f60;
+        text-decoration: underline;
+    }
+</style>
 <?php  
     
     include_once "database.php";
     include_once "functions.php";
     include_once "sectionStart.php";
 ?>
-
-<a href = "adminUser.php"> return </a>
-<div class = "introduction"> The Online Restaurant </div>
+<div class="return">
+    <a href="adminUser.php">Click to return to the previous page </a>
+</div>
+<div class = "introduction"> K's Cafe </div>
 <span><h3><i>Welcome  User: <?php echo $_SESSION['username']; ?> <i></h3><span>
 
 
-<div>
+<div class="table">
     
-    <table>
+    <table class="employee">
             <caption>Eligible Chefs</caption>
                 <tr=> 
                     <th>Chef Name</th>  
@@ -64,12 +73,13 @@
                 ?>
     </table>
     <form action = "demote.php" method = "POST">
-                Demote Chef:<input type= "text" name="usernamec" placeholder = "Username of Chef">
+                <h3 class="text">Demote Chef</h3>
+                <input type= "text" name="usernamec" placeholder = "Username of Chef">
                 <br>
-                <button type = "submit" name = "submit">Demote Chef!</button>
+                <button class="sub-butt" type = "submit" name = "submit">Demote Chef!</button>
                 <br>             
     </form>
-    <table>
+    <table class="employee">
             <caption>Eligible Delivery</caption>
                 <tr=> 
                     <th>Delivery Name</th>  
@@ -120,9 +130,11 @@
                 ?>
     </table>
     <form action = "demote.php" method = "POST">
-                Demote Delivery<input type= "text" name="usernamed" placeholder = "Username of Deliveryguy">
+                
+                <h3 class="text">Demote Delivery</h3>
+                <input type= "text" name="usernamed" placeholder = "Username of Deliveryguy">
                 <br>
-                <button type = "submit" name = "submit">Demote Delivery Guy!</button>
+                <button class="sub-butt" type = "submit" name = "submit">Demote Delivery Guy!</button>
                 <br>             
     </form>
 

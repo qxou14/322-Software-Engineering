@@ -9,8 +9,10 @@
     
 ?>
 <link rel = "stylesheet" type = "text/css" href ="style.css">
-
-<div class = "introduction"> The Online Restaurant </div>
+<link rel = "stylesheet" type = "text/css" href ="reset2.css">
+<link rel = "stylesheet" type = "text/css" href ="zDinein.css">
+<div class="box">
+<div class = "introduction"> K's Cafe </div>
 <div class = "look">
     <span><a href="afterlogin.php"> Order </a></span>
     <span><a href = "zDinein.php">Dine in </a></span>
@@ -23,14 +25,15 @@
 <body>
 
 
-<span><h3><i>Welcome User: <?php echo $_SESSION['username']; ?> <i></h3></span>
+<h3 class="username"><i>Welcome User: <?php echo $_SESSION['username']; ?> <i></h3>
 
 <h2 style = "text-align:center"> Pick your time!</h2>
 <br>
 
-<div class = "tables">
+
+<div class = "tables-list">
     <table>
-            <caption>Avaliable Time</caption>
+            <caption class="avaliable-time">Avaliable Time</caption>
                 <tr=> 
                     <th>Session</th>  
                     <th>Day</th>
@@ -105,15 +108,16 @@
                 
                 <form action = "zDinein.php" method = "POST"> 
 
-                        Pick a session: <input type ="number"  name = 'session' value = 1 min = 1 max = 20>
-                        <button type = "submit" name = "submit">Make an appointment</button>
+                        <h3>Pick a session: </h3>
+                        <input type ="number"  name = 'session' value = 1 min = 1 max = 20>
+                        <button class="pick-button" type = "submit" name = "submit">Make an appointment</button>
                 </form>
     </table>
  </div>
 
 
  <div class = "tables"> 
-     <table>
+     <table class="t2">
         <caption>Your appointment</caption>
                 <tr=> 
                     <th>Session</th>  
@@ -171,8 +175,8 @@
                 </table>
                 <form action = "zDinein.php" method = "POST"> 
 
-                        Delete your time: <input type ="number"  name = 'session1' value = 1 min = 1 max = 20>
-                        <button type = "submit" name = "submit1">Cancel your appointment</button>
+                Cancel your appointment session: <input type ="number"  name = 'session1' value = 1 min = 1 max = 20>
+                        <button type = "submit" name = "submit1">Cancel</button>
                 </form>
                     
 
@@ -180,4 +184,5 @@
 
 
 
+ </div>
  </div>

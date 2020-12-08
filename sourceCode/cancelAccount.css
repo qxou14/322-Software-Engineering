@@ -1,0 +1,33 @@
+.box{
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.introduction{
+    text-align: center;
+    padding: 0px;
+    padding-top: 20px;
+}
+h3{
+    font-size: 20px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.cancel{
+    text-align: center;
+    margin: 5% auto;
+}
+input{
+    margin-top: 20px;
+}
+.cancel .user-input{
+    margin-top: 20px;
+    width: 200px;
+    height: 30px;
+}
+.button{
+    width: 100px;
+    height: 30px;
+}

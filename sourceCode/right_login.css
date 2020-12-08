@@ -1,0 +1,81 @@
+.box{
+    position: relative;
+}
+.wrapper-right{
+    display: inline-block;
+    height: 800px;
+    width: 500px;
+    margin-left: 50px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+.wrapper-right .store-name{
+    height: 75px;
+    line-height: 75px;
+    background-image: url("image/Picture1.jpg");
+}
+.wrapper-right .store-name h2{
+    font-family:Arial,Helvetica,sans-serif;
+    font-size: 25px;
+    padding-left: 20px;
+    background-image: url(image/Picture1.jpg);
+}
+
+.wrapper-right .about-us{
+    width: 500px;
+    height: 25px;
+    text-align: center;
+}
+
+.wrapper-right .about-us a{
+    font-size: 20px;
+    font-style: bold;
+}
+
+.wrapper-right .recepit{
+    height: 300px;
+    width: 500px;
+    background-image: url(image/new_receipt_2.JPG);
+}
+
+
+.wrapper-right .cate-1{
+    display: inline-block;
+    width: 250px;
+    height: 250px;
+    margin-right: -2px;
+    margin-bottom: -2px;
+    background-image: url(image/Picture1.jpg);
+    background-position: bottom;
+}
+.wrapper-right .cate-2{
+    display: inline-block;
+    margin-left: -2px;
+    margin-bottom: -2px;
+    width: 250px;
+    height: 250px;
+    background-image: url(image/Picture3.jpg);
+    background-position: center;
+}
+
+.wrapper-right .cate-3{
+    display: inline-block;
+    margin-right: -2px;
+    margin-top: -2px;
+    width: 250px;
+    height: 150px;
+    background-image: url(image/Picture2.jpg);
+    background-position: center;
+}
+
+.wrapper-right .cate-4{
+    display: inline-block;
+    margin-left: -2px;
+    margin-top: -2px;
+    width: 250px;
+    height: 150px;
+    background-image: url(image/Picture4.jpg);
+    background-size: 250px 150px;
+}

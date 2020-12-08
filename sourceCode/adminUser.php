@@ -1,4 +1,11 @@
 <link rel = "stylesheet" type = "text/css" href ="style.css">
+<link rel = "stylesheet" type = "text/css" href ="background_color.css">
+<style>
+    a:hover {
+        color: #f60;
+        text-decoration: underline;
+    }
+</style>
 <?php  
     
     include_once "database.php";
@@ -8,7 +15,7 @@
 
 
 
-<div class = "introduction"> The Online Restaurant </div>
+<div class = "introduction"> K's Cafe </div>
 
 <h3><i>Welcome  User: <?php echo $_SESSION['username']; ?> <i></h3>
 

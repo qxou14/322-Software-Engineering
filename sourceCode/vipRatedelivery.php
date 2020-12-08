@@ -16,15 +16,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link rel = "stylesheet" type = "text/css" href ="style.css">
+<link rel = "stylesheet" type = "text/css" href ="background_color.css">
 <link rel = "stylesheet" type = "text/css" href ="menustyle.css">
+<style>
+    
+    a:hover {
+    color: #f60;
+    text-decoration: underline;
+  }
+</style>
 
-<div class = "introduction"> The Online Restaurant </div>
+<div class = "introduction"> K's Cafe </div>
 <div class = "look">
 <span><a href="vipafterlogin.php"> Order </a></span>
     <span><a href = "vipzDinein.php">Dine in </a></span>
     <span><a href = "vipcustomerComplaint.php">Complain</a></span>
-    <span><a href = "deposit.php"> Deposit</a></span>
-    <span><a href = "cancelAccount.php"> Cancellation</a></span>
+    <span><a href = "vipdeposit.php"> Deposit</a></span>
+    <span><a href = "vipcancelAccount.php"> Cancellation</a></span>
     <span><a href = "vipRecommended.php"> Recommended</a></span>
     <span><a href = "vipRatetoggle.php"> Rating</a></span>
     <span><a href = "logout.php"> Log out</a></span>

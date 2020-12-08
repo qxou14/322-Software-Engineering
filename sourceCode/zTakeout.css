@@ -1,0 +1,14 @@
+.table {
+    text-align: center;
+    margin: 2% auto;
+}
+
+.d1, .d2{
+    margin-top: 5px;
+    text-align: center;
+}
+
+.d1 button, .d2 button{
+    height: 25px;
+    border-radius: 15px;
+}

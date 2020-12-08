@@ -8,8 +8,19 @@
     
 ?>
 <link rel = "stylesheet" type = "text/css" href ="style.css">
+<link rel = "stylesheet" type = "text/css" href ="background_color.css">
+<style>
+    
+    a:hover {
+    color: #f60;
+    text-decoration: underline;
+  }
+</style>
 
-<div class = "introduction"> The Online Restaurant </div>
+
+</head>
+<body>
+<div class = "introduction"> K's Cafe </div>
 <div class = "look">
     <span><a href="afterlogin.php"> Order </a></span>
     <span><a href = "zDinein.php">Dine in </a></span>
@@ -18,8 +29,6 @@
     <span><a href = "cancelAccount.php"> Cancellation</a></span>
     <span><a href = "logout.php"> Log out</a></span>
 </div>
-</head>
-<body>
 <h3><i>Welcome User: <?php echo $_SESSION['username']; ?> <i></h3>
 
 <?php 

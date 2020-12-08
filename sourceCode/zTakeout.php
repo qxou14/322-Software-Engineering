@@ -10,8 +10,20 @@
 
 
 <link rel = "stylesheet" type = "text/css" href ="style.css">
+<link rel = "stylesheet" type = "text/css" href ="zTakeout.css">
+<link rel = "stylesheet" type = "text/css" href ="background_color.css">
+<style>
+    
+    a:hover {
+    color: #f60;
+    text-decoration: underline;
+  }
+</style>
 
-<div class = "introduction"> The Online Restaurant </div>
+
+</head>
+<body>
+<div class = "introduction"> K's Cafe </div>
 <div class = "look">
     <span><a href="afterlogin.php"> Order </a></span>
     <span><a href = "">Complain</a></span>
@@ -19,8 +31,6 @@
     <span><a href = "cancelAccount.php"> Cancellation</a></span>
     <span><a href = "logout.php"> Log out</a></span>
 </div>
-</head>
-<body>
 <span><a href = "pickmethod.php" style = "color:blue"> Go back </a><span>
 <h3><i>Welcome User: <?php echo $_SESSION['username']; ?> <i></h3>
 <?php 
@@ -106,8 +116,8 @@
         }
 ?>
 
-
-        <table>
+        <div class="table">
+        <table class="table">
 
         <caption>History</caption>
                 <tr=>
@@ -145,7 +155,6 @@
                     $phone = $row['phoneNumber'];
 
                     echo "<p>YOUR NAME: $name</p>";
-                    echo "<br>";
                     echo "<p>YOUR PHONE: $phone</p>";
                     
                     ?>
@@ -154,6 +163,7 @@
         
         
         </table>
+        </div>
 
     <form action = "zTakeout.php" method ="Post">
 
@@ -162,6 +172,9 @@
                             <input type = "submit" name = "submit">
     </h2>
     </form>
+
+</body>
+</html>
 
 
 
