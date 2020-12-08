@@ -35,7 +35,7 @@
 
 <div class="table">
     <table class="employee">
-        <caption>Cultural Menu</caption>
+        <caption>Your Menu</caption>
             <tr=> 
                 <th>Dish Name</th>  
                 <th>Describtion</th>
@@ -50,7 +50,7 @@
                     $row = $_POST['row'];
                    
                     
-                    $sqlStatement = "UPDATE cultdish SET dishname = '$name' WHERE id = $row+$number_of_dishes" ;
+                    $sqlStatement = "UPDATE menudish SET dishname = '$name' WHERE id = $row+$number_of_dishes" ;
                     $_POST['Nname'] = "";
                     $_POST['row']= "";
                     mysqli_query($conn,$sqlStatement);
@@ -63,7 +63,7 @@
                     $row1 = $_POST['row1'];
                    
                     
-                    $sqlStatement = "UPDATE cultdish SET dishdesc = '$desc' WHERE id = $row1+$number_of_dishes" ;
+                    $sqlStatement = "UPDATE menudish SET dishdesc = '$desc' WHERE id = $row1+$number_of_dishes" ;
                     $_POST['Ndesc'] = "";
                     $_POST['row1']= "";
                     mysqli_query($conn,$sqlStatement);
@@ -76,7 +76,7 @@
                     $row2 = $_POST['row2'];
                    
                     
-                    $sqlStatement = "UPDATE cultdish SET price = '$price' WHERE id = $row2+$number_of_dishes" ;
+                    $sqlStatement = "UPDATE menudish SET price = '$price' WHERE id = $row2+$number_of_dishes" ;
                     $_POST['Nprice'] = "";
                     $_POST['row2']= "";
                     mysqli_query($conn,$sqlStatement);
@@ -85,7 +85,7 @@
 
 
             
-                $result = $conn -> query("SELECT * FROM cultdish ");
+                $result = $conn -> query("SELECT * FROM menudish WHERE cheif_id = '2' ");
                 $i = 0;
                 if ($result -> num_rows >0)
                 {
@@ -110,7 +110,7 @@
     <form action = "cheif2.php" method = "Post">
 
                 <h3 class="text">row</h3>
-                <input class="row" type = "number" name = "row" min = 1 max = 3 placeholder = "1 to 3 ">
+                <input class="row" type = "number" name = "row" min = 1 max = 6 placeholder = "1 to 6 ">
                 <br>
                 <h3 class="header3">New Name</h3>
                 <input type = "text" name = "Nname">
@@ -124,7 +124,7 @@
     <form action = "cheif2.php" method = "Post">
 
                 <h3 class="text">row</h3>
-                <input class="row" type = "number" name = "row1" min = 1 max = 3 placeholder = "1 to 3 ">
+                <input class="row" type = "number" name = "row1" min = 1 max = 6 placeholder = "1 to 6 ">
                 <br>
                 <h3>New Description</h3>
                 <input type = "text" name = "Ndesc">
@@ -137,7 +137,7 @@
     <form action = "cheif2.php" method = "Post">
 
                 <h3 class="text">row</h3>
-                <input class="row" type = "number" name = "row2" min = 1 max = 3 placeholder = "1 to 3 ">
+                <input class="row" type = "number" name = "row2" min = 1 max = 6 placeholder = "1 to 6 ">
                 <br>
                 <h3>New Price</h3>
                 <input type = "number" min = 0 step = 0.01 name = "Nprice">

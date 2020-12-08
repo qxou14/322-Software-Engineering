@@ -49,7 +49,7 @@
                     $row = $_POST['row'];
                    
                     
-                    $sqlStatement = "UPDATE popdish SET dishname = '$name' WHERE id = $row" ;
+                    $sqlStatement = "UPDATE menudish SET dishname = '$name' WHERE id = $row" ;
                     $_POST['Nname'] = "";
                     $_POST['row']= "";
                     mysqli_query($conn,$sqlStatement);
@@ -62,7 +62,7 @@
                     $row1 = $_POST['row1'];
                    
                     
-                    $sqlStatement = "UPDATE popdish SET dishdesc = '$desc' WHERE id = $row1" ;
+                    $sqlStatement = "UPDATE menudish SET dishdesc = '$desc' WHERE id = $row1" ;
                     $_POST['Ndesc'] = "";
                     $_POST['row1']= "";
                     mysqli_query($conn,$sqlStatement);
@@ -75,7 +75,7 @@
                     $row2 = $_POST['row2'];
                    
                     
-                    $sqlStatement = "UPDATE popdish SET price = '$price' WHERE id = $row2" ;
+                    $sqlStatement = "UPDATE menudish SET price = '$price' WHERE id = $row2" ;
                     $_POST['Nprice'] = "";
                     $_POST['row2']= "";
                     mysqli_query($conn,$sqlStatement);
@@ -84,7 +84,7 @@
 
 
             
-                $result = $conn -> query("SELECT * FROM popdish ");
+                $result = $conn -> query("SELECT * FROM menudish WHERE cheif_id= '1' ");
                 $i = 0;
                 if (!$result) {
                     trigger_error('Invalid query: ' . $conn->error);
@@ -111,7 +111,7 @@
     <form action = "cheif1.php" method = "Post">
 
                 <h3 class="text">row</h3>
-                <input class="row" type = "number" name = "row" min = 1 max = 3 placeholder = "1 to 3 ">
+                <input class="row" type = "number" name = "row" min = 1 max = 6 placeholder = "1 to 6 ">
                 <br>
                 <h3 class="header3">New Name</h3>
                 <input type = "text" name = "Nname">
@@ -125,7 +125,7 @@
     <form action = "cheif1.php" method = "Post">
 
                 <h3 class="text">row</h3>
-                <input class="row" type = "number" name = "row1" min = 1 max = 3 placeholder = "1 to 3 ">
+                <input class="row" type = "number" name = "row1" min = 1 max = 6 placeholder = "1 to 6 ">
                 <br>
                 <h3>New Description</h3>
                 <input type = "text" name = "Ndesc">
@@ -138,7 +138,7 @@
     <form action = "cheif1.php" method = "Post">
 
                 <h3 class="text">row</h3>
-                <input class="row" type = "number" name = "row2" min = 1 max = 3 placeholder = "1 to 3 ">
+                <input class="row" type = "number" name = "row2" min = 1 max = 6 placeholder = "1 to 6 ">
                 <br>
                 <h3>New Price</h3>
                 <input type = "number" min = 0 step = 0.01 name = "Nprice">
