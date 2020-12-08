@@ -4,16 +4,33 @@
     include "functions.php";
 ?>
 
-<a href="vipafterlogin.php"> <b>return<b> </a>
 <link rel = "stylesheet" type = "text/css" href ="style.css">
+<link rel = "stylesheet" type = "text/css" href ="reset2.css">
+<link rel = "stylesheet" type = "text/css" href ="customerComplaint.css">
+<style>
+    button{
+    border-radius: 10px;
+    background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+</style>
 
+<div class="box">
+<div class="return">
+    <a href="vipafterlogin.php">Click to return to the previous page </a>
+</div>
+
+<div class="complain">
 <form action = "vipcustomerComplaint.php" method = "POST">
-        <label>Complain/Compliment a person:</label>
-        <input type = "text" name = "complainedPerson" placeholder = "Username of complained/complimented person">
-        <br>
-        <tr><td>Your username:</td><td> <input type="text"  name="complainant" placeholder="Input your username"></td></tr>
-        <textarea name="complaint" placeholder="Write your complaint/compliment"></textarea>   
-        <button type = "submit" name = "submit">Done!</button>
+        <h1>To Complain/Compliment a person</h1>
+        <h3>Your username:</h3>
+        <input class="user-name" type="text"  name="complainant" placeholder="Input your username">
+        <h3>The person you want to Complain/Compliment:</h3>
+        <input class="user-name" type = "text" name = "complainedPerson" placeholder = "Username of complained/complimented person">
+        <h3>Write your Complain/Compliment</h3>
+        <textarea class="user-input" name="complaint" placeholder="Write your complaint/compliment"></textarea>   
+        <div class="sub-butt">
+        <button type = "submit" name = "submit">Submit!</button>
+        </div>
 </form>
 
 <?php
@@ -89,15 +106,15 @@ if(isset($_POST['complaint'])) {
 
 
 ?>
-
-<table border="0" cellpadding="0" cellspacing="0">
-            <tr bgcolor="#f87820">
+<div class="complain">
+<table class="complain-table" border="0" cellpadding="0" cellspacing="0">
+            <tr>
                 <td class=tabhead><img src="img/blank.gif" alt="" width="400" height="6"><br><b>Person Who complains/compliments</b></td>
                 <td class=tabhead><img src="img/blank.gif" alt="" width="400" height="6"><br><b>Complained/Complimented person</b></td>
                 <td class=tabhead><img src="img/blank.gif" alt="" width="400" height="6"><br><b>Compliant/Compliment</b></td>
                 <td class=tabhead><img src="img/blank.gif" alt="" width="400" height="6"><br><b>Dispute</b></td>
-                <td><img src="img/blank.gif" alt="" width="10" height="25"></td>
             </tr>
+</div>
 
 <?php
      $username = $_SESSION['username'];
@@ -121,17 +138,20 @@ if(isset($_POST['complaint'])) {
 ?>
   </table>
 
+<div class="dispute">
 <h1>Dispute </h1>
 
 <form action = "vipcustomerComplaint.php" method = "POST">
-        <label>write down your reason if you dispute the complaint:</label>
-        <textarea name="dispute" placeholder="Write down your argument"></textarea> 
-        <br>
-        <tr><td>Your username:</td><td> <input type="text"  name="BCP" placeholder="Input your username"></td></tr>
-        <tr><td>Username of person who complained you:</td><td> <input type="text"  name="CP" placeholder="Username of person who complained you"></td></tr>
+        <h3>Your username:</h3>
+        <input class="user-name" type="text"  name="BCP" placeholder="Input your username">
+        <h3>Username of person who complained you:</h3>
+        <input class="user-name" type="text"  name="CP" placeholder="Username of person who complained you">
+        <h3>Reason to dispute the complaint</h3>
+        <textarea class="user-input" name="dispute" placeholder="Write down your argument"></textarea> 
+        <div class="sub-butt">
         <button type = "submit" name = "submit">Done!</button>
-</form>
-
+        </div>
+</div>
 
 
 
@@ -176,3 +196,4 @@ if(isset($_POST['complaint'])) {
       
     }
     ?>
+    </div>

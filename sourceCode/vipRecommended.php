@@ -32,7 +32,7 @@
 </div>
 </head>
 <body>
-<h3><i>Welcome VIP User: <?php echo $_SESSION['username']; ?> <i></h3>
+<h3 class="User-infor"><i>Welcome VIP User: <?php echo $_SESSION['username']; ?> <i></h3>
 
 <?php 
     $username = $_SESSION['username'];

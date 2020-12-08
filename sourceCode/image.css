@@ -19,7 +19,7 @@
 #box .image .screen{
     animation-name: image-flow;
     animation-iteration-count: infinite;
-    animation-duration: 12s;
+    animation-duration: 8s;
 }
 
 @keyframes image-flow{

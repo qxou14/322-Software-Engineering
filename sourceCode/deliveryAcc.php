@@ -1,4 +1,19 @@
 <link rel = "stylesheet" type = "text/css" href ="style.css">
+<link rel = "stylesheet" type = "text/css" href ="demote.css">
+<link rel = "stylesheet" type = "text/css" href ="background_color.css">
+<style>
+    a:hover {
+        color: #f60;
+        text-decoration: underline;
+    }
+    body{
+    height: 2000px;
+    }
+    textarea{
+    height: 200px;
+    width: 400px;
+    }
+</style>
 <?php  
     
     include_once "database.php";
@@ -12,15 +27,15 @@
 
 
 
-<div class = "introduction"> The Online Restaurant </div>
+<div class = "introduction"> K's Cafe </div>
 
 <h3><i>Welcome  User: <?php echo $username ?> <i></h3>
 
 
 
-
-<table> 
-    <caption>List</caption>
+<div class="table">
+    <table class="employee">
+    <caption>Delivery List</caption>
             <tr=>
                 <th>Food</th> 
                 <th>quantity</th>
@@ -80,25 +95,29 @@
 </table>
 
 <form action = "deliveryAcc.php" method ="POST"> 
-
-               Customer Username: <input type = "text" name = username>
+                <h3 class="text">
+                    Customer Username
+                </h3>
+               <input type = "text" name = username>
                 <br>
-                Customer Name:<input type ="text" name = customername>
+                <h3>
+                    Customer Name
+                </h3>
+                <input type ="text" name = customername>
                 <br>
-                <button type = "submit" name = "submit" >Already Delivered to this User </button>
+                <button class="sub-butt" type = "submit" name = "submit" >Already Delivered to this User </button>
 
 
 </form>
 
 
 
-<table border="0" cellpadding="0" cellspacing="0">
-            <tr bgcolor="#f87820">
+<table class="employee" border="0" cellpadding="0" cellspacing="0">
+            <tr>
                 <td class=tabhead><img src="img/blank.gif" alt="" width="400" height="6"><br><b>Person Who complains/compliments</b></td>
                 <td class=tabhead><img src="img/blank.gif" alt="" width="400" height="6"><br><b>Complained/Complimented person</b></td>
                 <td class=tabhead><img src="img/blank.gif" alt="" width="400" height="6"><br><b>Compliant/Compliment</b></td>
                 <td class=tabhead><img src="img/blank.gif" alt="" width="400" height="6"><br><b>Dispute</b></td>
-                <td><img src="img/blank.gif" alt="" width="10" height="25"></td>
             </tr>
 
 <?php
@@ -123,12 +142,22 @@
 ?>
   </table>
   <form action = "deliveryAcc.php" method = "POST">
-        <label>Complain/Compliment a customer:</label>
-        <input type = "text" name = "complainedPerson" placeholder = "Username of complained/complimented customer">
+        <h2>
+            Complain/Compliment a customer
+        </h2>
+        <h3>
+            Username of the Customer
+        </h3>
+        <input type = "text" name = "complainedPerson" placeholder = "Username">
+        <h3>
+            Your Username
+        </h3>
+        <input type="text"  name="complainant" placeholder="Input your username">
         <br>
-        <tr><td>Your username:</td><td> <input type="text"  name="complainant" placeholder="Input your username"></td></tr>
+        <br>
         <textarea name="complaint" placeholder="Write your complaint/compliment"></textarea>   
-        <button type = "submit" name = "submit">Done!</button>
+        <br>
+        <button class="sub-butt" type = "submit" name = "submit">Done!</button>
 </form>
 
 <?php 
@@ -163,15 +192,20 @@
 ?>
 
 
-<h1>Dispute </h1>
+<h1>To Dispute a complaint</h1>
 
 <form action = "deliveryAcc.php" method = "POST">
-        <label>write down your reason if you dispute the complaint:</label>
+    <h3>
+        write down your reason if you dispute the complaint
+    </h3>
         <textarea name="dispute" placeholder="Write down your argument"></textarea> 
         <br>
-        <tr><td>Your username:</td><td> <input type="text"  name="BCP" placeholder="Input your username"></td></tr>
-        <tr><td>Username of customer who complained you:</td><td> <input type="text"  name="CP" placeholder="Username of customer who complained you"></td></tr>
-        <button type = "submit" name = "submit">Done!</button>
+        <h3>Your Username</h3>
+        <input type="text"  name="BCP" placeholder="Username">
+        <h3>Username of customer who complained you</h3>
+        <input type="text"  name="CP" placeholder="Username">
+        <br>
+        <button class="sub-butt" type = "submit" name = "submit">Done!</button>
 </form>
 
 
@@ -205,11 +239,12 @@
       
     }
     ?>
-
+</div>
 
 <div class = "logos">
     <u1>
         <li><a href = "logout.php"> log out </a></li>
     </u1>
 </div>
+
     

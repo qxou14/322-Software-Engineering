@@ -50,7 +50,8 @@
         <div class="store-name">
         </div>
             <div class="about-us">
-                <a href="AboutUs.html">About Us</a>
+                <a href="AboutUs.html" target="_blank">About Us</a>
+                <a href="Contact.html" target="_blank">Contact Us</a>
             </div>
             <div class="recepit">
                 
