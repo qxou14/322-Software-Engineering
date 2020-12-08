@@ -1,11 +1,23 @@
+
+
+
 <link rel = "stylesheet" type = "text/css" href ="style.css">
 <?php  
     
     include_once "database.php";
     include_once "functions.php";
     include_once "sectionStart.php";
-?>
-<div class = "introduction"> The Online Restaurant </div>
+    $username = $_SESSION["username"];
+
+    $sql1 = "SELECT level FROM info WHERE username ='$username'";
+    $result = $conn->query($sql1);
+    $row = $result->fetch_assoc();
+    $userType = $row['level'];
+
+    if($userType == 0)
+    {?>
+        <div class = "introduction"> The Online Restaurant </div>
+
 <div class = "look">
     <span><a href="afterlogin.php"> Order </a></span>
     <span><a href = "customerComplaint.php">Complain</a></span>
@@ -15,6 +27,27 @@
 </div>
 
 <h3><i>Welcome  User: <?php echo $_SESSION['username']; ?> <i></h3>
+    <?php }
+
+    else
+    {?>
+       <div class = "introduction"> The Online Restaurant </div>
+
+<div class = "look">
+    <span><a href="vipafterlogin.php"> Order </a></span>
+    <span><a href = "vipcustomerComplaint.php">Complain</a></span>
+    <span><a href = "deposit.php"> Deposit</a></span>
+    <span><a href = "cancelAccount.php"> Cancellation</a></span>
+    <span><a href = "logout.php"> Log out</a></span>
+</div>
+
+<h3><i>Welcome  VIP User: <?php echo $_SESSION['username']; ?> <i></h3>
+    <?php
+    }
+
+?>
+
+
 
 <form action = "cancelAccount.php" method = "POST">
     <label>If you want to shut down your account type "yes":</label>
@@ -41,6 +74,5 @@
             echo "you need to enter yes in order to shut down your account";
         }
 
-    }
+    }?>
 
-?>
