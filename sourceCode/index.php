@@ -36,7 +36,7 @@
             </div>
             <div class="sign-up">
                 <h4 class="user">New User? <a href="reg.php">Sign Up</a></h4>
-                <h4 class="chief">Chief login <a href="cheifloginPlace.php">Here</a></h4>
+                <h4 class="chief">Chef login <a href="cheifloginPlace.php">Here</a></h4>
                 <h4 class="deliveryman">Deliveryman login <a href="deliveryLogin.php">Here</a></h4>
                 <h4 class="manager">Manager login <a href="adminLogin.php">Here</a></h4>
             </div>

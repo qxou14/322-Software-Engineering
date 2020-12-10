@@ -14,6 +14,8 @@
 
 <div class="deposit">
 <form action = "deposit.php" method = "POST">
+    <h3>Enter your Credit Card:</h3>
+    <input type = "text" name = "tmp" placeholder="Card number:">
     <h3>Money you want to deposit:</h3>
     <input type = "text" name = "money" placeholder="Enter the amount">
     <div class="sub-butt">
