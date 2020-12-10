@@ -127,18 +127,28 @@
                 <tr>
                     
                 <?php
+                     
                 
                 if(isset($_POST['session1']))
                 {
-                    
                     $time = $_POST['session1'];
+                    $temp = $conn -> query("SELECT session_num FROM ready WHERE session_num = $time");
+                  
+                    if($temp -> num_rows > 0)
+                    {
+                       
 
-                     $sql1 = "UPDATE appointment SET numberOfSeats = numberOfSeats+1 WHERE session_num =$time ";
-                       mysqli_query($conn,$sql1);
-                    
-                    $delete = "DELETE FROM ready WHERE session_num = $time";
-                    mysqli_query($conn,$delete);
-                    header("location: ../SESERVER/zDinein.php");
+                        $sql1 = "UPDATE appointment SET numberOfSeats = numberOfSeats+1 WHERE session_num =$time ";
+                          mysqli_query($conn,$sql1);
+                       
+                       $delete = "DELETE FROM ready WHERE session_num = $time";
+                       mysqli_query($conn,$delete);
+                       header("location: ../SESERVER/zDinein.php");
+
+                    }
+
+
+                   
 
 
                 }
