@@ -41,6 +41,10 @@
             {
                 $sqlD = "DELETE FROM ready WHERE session_num > -1";
                 mysqli_query($conn,$sqlD);
+
+                $sqlS = "UPDATE appointment SET numberOfSeats = 2";
+                mysqli_query($conn,$sqlS);
+                
             }
             
             $result = $conn -> query("SELECT session_num,day,startTime,FullName,phoneNumber FROM ready");
