@@ -59,7 +59,7 @@
 
   
 <section class="menu"><h2 class="menu_title">Our Menu</h2>
-    <div class="menu_section Chef_1_Dishes"><h3>Popular Dishes</h3>
+    <div class="menu_section Chef_1_Dishes"><h3>Popular Dishes made by chef1, username:cheif1</h3>
                     <?php
                         $visited = 0;
                         $query = "SELECT * FROM menudish WHERE cheif_id = '1' AND SPECIAL = '0' ORDER BY id ASC";
@@ -132,7 +132,7 @@
                         ?>
                 
                     
-                <div class="menu_section Chef_2_Dishes"><h3>Cultural Dishes</h3>
+                <div class="menu_section Chef_2_Dishes"><h3>Cultural Dishes made by chef2, username:cheif2</h3>
                 <?php
                         $query = "SELECT * FROM menudish WHERE cheif_id = '2' AND SPECIAL ='0' ORDER BY id ASC ";
                         $result = mysqli_query($conn,$query);
