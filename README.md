@@ -5,7 +5,7 @@ In order to access this project, we need to download xampp for our database and 
 <br>
 In order to use the chef,admin and delivery man features, please use the accounts and password that I created inside the txt named <b>"322 Givenaccount.txt"</b>.
 <br>
-Also, remember to insert the data inside the appointment relation by using the insert statements I provided in the SQLstatement.txt
+Also, remember to insert the data inside the appointment relation by using the insert statements I provided in the <b>SQLstatement.txt</b>
 
 XAMPP steps:<br>1.Once XAMPP has been downloaded, open it and we need to start two servers <b>Apache</b> and <b>MySQL</b>, once the servers have been started, we need to type http://localhost/phpmyadmin/ inside our browser. Then we need to create a database named <b>logininfo</b> by clicking the <b>New</b> button on the left hand side.
 <br>2.Then we click in the database that we just created (logininfo) and we will need to create tables and insert some important datas using the <b>SQLstatement.txt</b> file that I created,(simply copy paste) by clicking <b>SQL</b> button that is in the center of the screen.
