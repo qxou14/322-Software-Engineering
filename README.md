@@ -8,7 +8,7 @@ In order to use the chef,admin and delivery man features, please use the account
 Also, remember to insert the data inside the appointment relation by using the insert statements I provided in the SQLstatement.txt
 
 XAMPP steps:<br>1.Once XAMPP has been downloaded, open it and we need to start two servers <b>Apache</b> and <b>MySQL</b>, once the servers have been started, we need to type http://localhost/phpmyadmin/ inside our browser. Then we need to create a database named <b>logininfo</b> by clicking the <b>new</b> button on the left hand side.
-<br>2.Then we click in the database that we just created (logininfo) and we will need to create tables and insert some important datas using the <b>SQLstatement.txt</b> file that I created.(simply copy paste) after we click <b>SQL</b> that is in the center of the screen.
+<br>2.Then we click in the database that we just created (logininfo) and we will need to create tables and insert some important datas using the <b>SQLstatement.txt</b> file that I created,(simply copy paste) by clicking <b>SQL</b> button that is in the center of the screen.
 <br>3.Then we create a folder named <b>SESERVER</b> inside the folder htdocs. The path for this htdocs folder will be xampp/htdocs
 <br>4. Clone the source codes inside the <b>sourceCode</b> folder on our git and put all the source code files inside the <b>SESERVER</b> folder.
 <br>5. Type <b>http://localhost/</b> on the browser, and click on <b>SESERVER</b> that we see inside the index page.
