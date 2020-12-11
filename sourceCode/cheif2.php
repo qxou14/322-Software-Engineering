@@ -22,7 +22,7 @@
     include_once "database.php";
     include_once "functions.php";
     include_once "sectionStart.php";
-    $number_of_dishes = 3;
+    $number_of_dishes = 6;
 ?>
 
 
@@ -85,7 +85,7 @@
 
 
             
-                $result = $conn -> query("SELECT * FROM menudish WHERE cheif_id = '2' ");
+                $result = $conn -> query("SELECT * FROM menudish WHERE cheif_id = '2' order by id ASC");
                 $i = 0;
                 if ($result -> num_rows >0)
                 {

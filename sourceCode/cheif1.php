@@ -84,7 +84,7 @@
 
 
             
-                $result = $conn -> query("SELECT * FROM menudish WHERE cheif_id= '1' ");
+                $result = $conn -> query("SELECT * FROM menudish WHERE cheif_id= '1' order by id ASC ");
                 $i = 0;
                 if (!$result) {
                     trigger_error('Invalid query: ' . $conn->error);
