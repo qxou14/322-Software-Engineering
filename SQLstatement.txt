@@ -217,17 +217,38 @@ CREATE TABLE menudish(
 insert into menudish(id,cheif_id,dishname,dishdesc,price,SPECIAL) values (1,1,'Yoshinoya beef bowl','Good food!',10.99,0);
 insert into menudish(id,cheif_id,dishname,dishdesc,price,SPECIAL) values (2,1,'Nigirizushi','Good food!',12.99,0);
 insert into menudish(id,cheif_id,dishname,dishdesc,price,SPECIAL) values (3,1,'Tamagoyaki','Good food!',14.99,0);
-insert into menudish(id,cheif_id,dishname,dishdesc,price,SPECIAL) values (7,1,'Dorayaki','Good food!',7.99,0);
-insert into menudish(id,cheif_id,dishname,dishdesc,price,SPECIAL) values (8,1,'Teppanyaki','Good food!',12.99,0);
+insert into menudish(id,cheif_id,dishname,dishdesc,price,SPECIAL) values (4,1,'Dorayaki','Good food!',7.99,0);
+insert into menudish(id,cheif_id,dishname,dishdesc,price,SPECIAL) values (5,1,'Teppanyaki','Good food!',12.99,0);
+insert into menudish(id,cheif_id,dishname,dishdesc,price,SPECIAL) values (6,1,'TonkotsuRamen','Good food!',12.99,1);
 
-insert into menudish(id,cheif_id,dishname,dishdesc,price,SPECIAL) values (4,2,'Unadon','Good food!',11.99,0);
-insert into menudish(id,cheif_id,dishname,dishdesc,price,SPECIAL) values (5,2,'AburiZushi','Good food!',9.99,0);
-insert into menudish(id,cheif_id,dishname,dishdesc,price,SPECIAL) values (6,2,'JapaneseDumpling','Good food!',6.99,0);
-insert into menudish(id,cheif_id,dishname,dishdesc,price,SPECIAL) values (9,2,'Tonkotsu','Good food!',8.99,0);
-insert into menudish(id,cheif_id,dishname,dishdesc,price,SPECIAL) values (10,2,'Yakitori','Good food!',9.99,0);
 
-insert into menudish(id,cheif_id,dishname,dishdesc,price,SPECIAL) values (11,1,'TonkotsuRamen','Good food!',12.99,1);
-insert into menudish(id,cheif_id,dishname,dishdesc,price,SPECIAL) values (12,2,'FiredDumpling','Good food!',12.99,1);
+
+insert into menudish(id,cheif_id,dishname,dishdesc,price,SPECIAL) values (7,2,'Tonkotsu','Good food!',8.99,0);
+insert into menudish(id,cheif_id,dishname,dishdesc,price,SPECIAL) values (8,2,'Yakitori','Good food!',9.99,0);
+
+insert into menudish(id,cheif_id,dishname,dishdesc,price,SPECIAL) values (9,2,'FiredDumpling','Good food!',12.99,1);
+insert into menudish(id,cheif_id,dishname,dishdesc,price,SPECIAL) values (10,2,'JapaneseDumpling','Good food!',6.99,0);
+insert into menudish(id,cheif_id,dishname,dishdesc,price,SPECIAL) values (11,2,'AburiZushi','Good food!',9.99,0);
+insert into menudish(id,cheif_id,dishname,dishdesc,price,SPECIAL) values (12,2,'Unadon','Good food!',11.99,0);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 UPDATE menudish SET dishimage = 'AburiZushi.jpg' WHERE id = 5;
 UPDATE menudish SET dishimage = 'Dorayaki.jpg' WHERE id = 7;
