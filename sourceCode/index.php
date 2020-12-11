@@ -52,6 +52,7 @@
             <div class="about-us">
                 <a href="AboutUs.html" target="_blank">About Us</a>
                 <a href="Contact.html" target="_blank">Contact Us</a>
+                <a href = "visitorRecommended.php" target= "_black">Visit Us </a>
             </div>
             <div class="recepit">
                 

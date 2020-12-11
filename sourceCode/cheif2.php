@@ -39,7 +39,9 @@
             <tr=> 
                 <th>Dish Name</th>  
                 <th>Describtion</th>
-                <th>Price</th>  
+                <th>Price</th>
+                <th>Average Rating</th> 
+                <th>Total number of rating</th>    
             <tr> 
             <?php
                 
@@ -96,6 +98,8 @@
                             echo "<td>".$row['dishname']."</td>";
                             echo "<td>".$row['dishdesc']."</td>";
                             echo "<td>".$row['price']."</td>";
+                            echo "<td>".$row['dishrating']."</td>";
+                            echo "<td>".$row['dishnoofrating']."</td>";
                             echo "</td>";
                             echo "</tr>";      
                         }
