@@ -26,7 +26,7 @@
             <h1 class="Store-name">K's Cafe</h1>
             
             <div class="Manager-login">
-                <h3>Chief Login</h3>
+                <h3>Chef Login</h3>
             </div>
             <form action = "cheifloginPlace.php" method = "POST">
             <div class="username">
