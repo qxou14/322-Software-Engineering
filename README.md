@@ -11,7 +11,7 @@ XAMPP steps:<br>1.Once XAMPP has been downloaded, open it and we need to start t
 <br>2.Then we click in the database that we just created (logininfo) and we will need to create tables and insert some important datas inside the database by using the <b>SQLstatement.txt</b> file,(simply copy paste) by clicking <b>SQL</b> button that is in the center of the screen.
 <br>3.Then we create a folder named <b>SESERVER</b> inside the folder <b>htdocs</b>. This folder will be inside the path of where we install our xampp. In my case, the path for this htdocs folder is xampp/htdocs.  There might be some folders inside the <b>htdocs</b> folder, just delete everything inside. All we need is a folder called <b>SESERVER</b>.
 <br>4. Clone the source codes inside the <b>sourceCode</b> folder on our git and put all the source code files inside the <b>SESERVER</b> folder.
-<br>5. Type <b>http://localhost/SESERVER </b> on the browser, and click on <b>SESERVER</b> that we see inside the index page. Note that if you didn't delete all the files or folders that are previously there, it is very hard to find the folder that you just created, so we recommend you to delete all the files or folders inside the <b>htdocs</b> folder before creating the <b>SESERVER</b> folder.
+<br>5. Type <b>http://localhost/SESERVER </b> on the browser, and we are inside the index page. Note that if you didn't delete all the files or folders that are previously there, it is very hard to find the folder that you just created, so we recommend you to delete all the files or folders inside the <b>htdocs</b> folder before creating the <b>SESERVER</b> folder.
 <br>6. If everything is done correctly, you will able to see our system.
 
 
